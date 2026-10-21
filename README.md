@@ -31,6 +31,7 @@ restarts when its window froze. Longer sessions haven't been checked.
 - [10. Turn on touch and sign in](#10-turn-on-touch-and-sign-in)
 - [11. Download Classic World](#11-download-classic-world)
 - [Set up the controller](#set-up-the-controller)
+- [Change controller buttons](docs/controller-setup.md#change-controller-buttons)
 - [Next time you play](#next-time-you-play)
 - [If something gets stuck](#if-something-gets-stuck)
 - [What I've checked](#what-ive-checked)
@@ -380,6 +381,10 @@ setup below. Character creation wasn't part of this walkthrough.
 Follow [controller setup](docs/controller-setup.md) to import the Thor layout.
 It maps movement, jump, attack, pickup and menus to the game's keyboard controls.
 The game's built-in controller layout didn't respond in the tested setup.
+GameNative sends keyboard presses, so MapleStory's **Controller** tab won't
+match this layout. To move an action to another button, follow
+[Change controller buttons](docs/controller-setup.md#change-controller-buttons).
+It shows where to edit, how to clear the old binding and how to save your changes.
 
 ## Next time you play
 

@@ -4,6 +4,18 @@ The game's Controller tab didn't respond to the Thor's buttons in this setup.
 Mapping the controller to the game's keyboard controls worked. This uses
 GameNative's own control profile. There is no extra app or background helper.
 
+## Why the game's Controller menu doesn't match
+
+GameNative turns each Thor button into a keyboard press before it reaches the
+game. With this layout, pressing **A** sends **Left Alt**, which the game uses
+for jump. Pressing **X** sends **Left Ctrl** for attack.
+
+MapleStory's **Controller** tab shows its own gamepad controls. Those controls
+didn't respond in the tested setup, so that screen doesn't describe the layout
+we're using. Change which key a Thor button sends in **GameNative's Edit Physical
+Controller** screen. To change what a keyboard key does in MapleStory, use the
+game's **Keyboard/Mouse** tab and match that key in GameNative too.
+
 ## Import the layout
 
 1. On the Thor, check **Download/ThorSetup** for **MapleStory-Thor.icp**. The
@@ -64,7 +76,37 @@ Keyboard. The right stick moves the pointer without clicking anything by itself.
 
 Quick slots start empty. Drag your chosen skills or items into **Q**, **W** and
 **E** in the game's quick-slot panel before using the shoulder buttons for them.
-Keep the game's normal keyboard bindings for the other actions in the table.
+The table shows the supplied layout with the game's normal keyboard bindings.
+
+## Change controller buttons
+
+1. While the game is running, press **Android Back** to open GameNative's
+   **Quick Menu**, then open **Controller**.
+2. Tap **Edit Physical Controller**. Tap the text itself. The gear beside it
+   opens stick sensitivity and deadzone settings instead.
+3. Choose a group on the left, such as **Face Buttons** for A, B, X and Y,
+   or **Shoulder Buttons** for the bumpers and triggers. Tap the button's row.
+4. Tap **Clear Binding** to remove its old assignment. This returns you to the
+   editor with that button showing **Not Set**.
+5. Tap the same button's row again. Choose **Keyboard**, then select the key for
+   the action you want. Use the table above to find it. The key picker calls
+   Left Alt **L ALT** and Left Ctrl **L CTRL**. You can search for `ALT` or `CTRL`.
+6. Tap the **checkmark at the top right** of the key picker.
+7. Repeat for any other buttons you want to change, then tap the **outer disk
+   Save icon** at the top right of the main controller editor.
+8. Close Quick Menu if it's still open. Tap the center **Play/resume** control
+   if paused, then try the buttons in the game.
+
+Clear the old binding first. Selecting another key without clearing can make
+one button send both keys at once.
+
+For example, to swap jump and talk, change **B** to **Keyboard → L ALT** and
+**A** to **Keyboard → SPACE**, clearing each old binding first. Save the editor.
+B should now jump and A should talk to NPCs.
+
+These edits apply to the current NexonLauncher entry. They don't change the
+downloaded `MapleStory-Thor.icp` file. Applying that original profile again
+replaces your changes with the supplied layout.
 
 On October 21, 2026, A and X were physically checked for jump and attack. After
 the full profile was applied, movement, NPC talk, inventory and the RT wheel

@@ -1,8 +1,8 @@
 # Controller setup
 
-The game's Controller tab didn't respond to the Thor's buttons in this setup.
-Mapping the controller to the game's keyboard controls worked. This uses
-GameNative's own control profile. There is no extra app or background helper.
+Import the Thor layout in GameNative, then change any buttons you want.
+It maps the controller to MapleStory's keyboard controls using GameNative's
+own control profile.
 
 ## Why the game's Controller menu doesn't match
 
@@ -10,18 +10,18 @@ GameNative turns each Thor button into a keyboard press before it reaches the
 game. With this layout, pressing **A** sends **Left Alt**, which the game uses
 for jump. Pressing **X** sends **Left Ctrl** for attack.
 
-MapleStory's **Controller** tab shows its own gamepad controls. Those controls
-didn't respond in the tested setup, so that screen doesn't describe the layout
-we're using. Change which key a Thor button sends in **GameNative's Edit Physical
-Controller** screen. To change what a keyboard key does in MapleStory, use the
-game's **Keyboard/Mouse** tab and match that key in GameNative too.
+MapleStory's **Controller** tab shows its own gamepad controls, so that screen
+doesn't describe this layout. Change which key a Thor button sends in
+**GameNative's Edit Physical Controller** screen. To change what a keyboard
+key does in MapleStory, use the game's **Keyboard/Mouse** tab and match that
+key in GameNative too.
 
 ## Import the layout
 
 1. On the Thor, check **Download/ThorSetup** for **MapleStory-Thor.icp**. The
    current setup helper copies it there alongside the runtime. If it's already
-   there, continue below. If you used an older setup ZIP, see **Copy the profile
-   file** below.
+   there, continue below. If it's missing, follow
+   [Copy the profile file](#copy-the-profile-file) first.
 2. Launch Classic World through your existing **NexonLauncher** entry.
 3. Press **Android Back** to open **Quick Menu**, then open **Controller**.
 4. Scroll down inside that panel and tap **Control Profiles**.
@@ -53,7 +53,7 @@ use the same import steps.
 
 ## Buttons
 
-These are the printed button letters confirmed on the Thor.
+Use the letters printed on the Thor's buttons.
 
 | Thor control | Action | Keyboard or mouse input |
 |---|---|---|
@@ -107,8 +107,3 @@ B should now jump and A should talk to NPCs.
 These edits apply to the current NexonLauncher entry. They don't change the
 downloaded `MapleStory-Thor.icp` file. Applying that original profile again
 replaces your changes with the supplied layout.
-
-On October 21, 2026, A and X were physically checked for jump and attack. After
-the full profile was applied, movement, NPC talk, inventory and the RT wheel
-were also confirmed on the Thor. Skill and item assignments depend on your
-character and weren't changed by this setup.

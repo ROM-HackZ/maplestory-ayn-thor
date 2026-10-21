@@ -1,20 +1,13 @@
 # MapleStory Classic World on the AYN Thor
 
-I wanted to get MapleStory Classic World running on my Thor. This is the setup
-that worked through the official Nexon Launcher in GameNative. I've written it
-down so I can put it back after a reinstall, and so you can follow it too.
+Here's how I play MapleStory Classic World on my Thor through the official
+Nexon Launcher in GameNative. Run the helper on your computer, then follow the
+steps on the Thor.
 
 The Windows helper downloads the files, checks them, installs GameNative and
 copies the installer, runtime and controller layout onto the Thor. Then you
 follow the steps below to enter the settings and sign into Nexon. You don't
 need to write commands.
-
-Checked on October 21, 2026: a fresh setup from the public ZIP reached **Select
-a Character** on the Thor. Touch worked through login, world and channel
-selection with Screen Size set to 1366x768. A short gameplay check then confirmed
-the controller layout, and switching the graphics driver version to Turnip
-stopped the flashing and broken scenery seen with System. Nexon Launcher needed
-restarts when its window froze. Longer sessions haven't been checked.
 
 ## Contents
 
@@ -30,7 +23,7 @@ restarts when its window froze. Longer sessions haven't been checked.
 - [9. Apply the graphics fix](#9-apply-the-graphics-fix)
 - [10. Turn on touch and sign in](#10-turn-on-touch-and-sign-in)
 - [11. Download Classic World](#11-download-classic-world)
-- [Set up the controller](#set-up-the-controller)
+- [12. Set up the controller](#12-set-up-the-controller)
 - [Change controller buttons](docs/controller-setup.md#change-controller-buttons)
 - [Next time you play](#next-time-you-play)
 - [If something gets stuck](#if-something-gets-stuck)
@@ -40,8 +33,8 @@ restarts when its window froze. Longer sessions haven't been checked.
 
 You'll need:
 
-- An AYN Thor with Wi-Fi and several GB of free space. The game download alone
-  was about 2 GB. GameNative and its runtime need more room.
+- An AYN Thor with Wi-Fi and several GB of free space. The game download is
+  about 2 GB. GameNative and its runtime need more room.
 - A Windows 10 or 11 computer with internet.
 - A USB cable that carries data. Some cables only charge.
 - Your own Nexon account and access to its verification emails.
@@ -133,7 +126,6 @@ uses one for installing Nexon Launcher and another for running it afterward.
 7. Selecting the `.wcp` starts installation automatically. Wait, then scroll
    down inside the manager. Look for **installed successfully** and an entry
    named **Proton: proton-11.0-2-arm64ec** under **Installed Wine/Proton Versions**.
-   There was no separate **Install Package** button in the tested import flow.
 8. Close the manager and return to the library. The installer uses GameNative's
    bundled **Proton 9.0 x86_64** option. You'll select it in step 6. If GameNative
    asks to download required files, let that finish. Don't substitute Proton 11
@@ -175,8 +167,8 @@ Open each named setting and choose the value below. Some fields are on other
 tabs or farther down the settings page.
 
 1. On the **General** tab, check **Container Variant** is **bionic**.
-2. Open **Wine Version** and choose **proton-9.0-x86_64**. The fresh default
-   wasn't this version, so change it before running the installer.
+2. Open **Wine Version** and choose **proton-9.0-x86_64**, even if another
+   version is already selected.
 3. On **General**, open **Executable Path** and choose **NexonLauncherSetup.exe**.
 4. Open the **Graphics** tab. Set **Graphics Driver** to **Wrapper** and
    **Graphics Driver Version** to **System**.
@@ -227,12 +219,12 @@ that outer Save icon to save the container. Close settings after checking.
 7. On the last screen, untick **Run Nexon Launcher** and **Run Nexon Launcher
    when my computer starts**. Then tap **Finish**.
 
-On the working setup, `D:` points to Android's `Download` folder. That means the
-installed launcher is now in **Download/Launcher**. Before continuing, use the
-Thor's file manager to check that this folder contains **nexon_launcher.exe**.
-If it doesn't, check the container's drive mapping before going further.
+In this setup, `D:` points to Android's `Download` folder. Open the Thor's file
+manager, then **Download → Launcher**. Check that **nexon_launcher.exe** is there
+before continuing. If it's missing, check the container's drive mapping before
+going further.
 
-The keyboard steps above use Gboard, the keyboard on my Thor. If yours looks
+The keyboard steps above use Gboard. If your keyboard looks
 different, use its floating or resize control so you can see the field while
 typing. Keep it floating for the launcher sign-in too.
 
@@ -254,9 +246,9 @@ typing. Keep it floating for the launcher sign-in too.
 3. Hold the old filename until it's highlighted, then replace it with exactly
    **`D:/Launcher/nexon_launcher.exe`**. This path uses forward slashes. It points
    to the program installed in step 7.
-4. Tap the popup's **OK**, then tap the **outer disk Save icon**. The keyboard
-   closed automatically on my Thor. If it's still open, hide it with Android's
-   bottom-left down arrow. Don't press Back again after it closes: that opens
+4. Tap the popup's **OK**, then tap the **outer disk Save icon**. If the keyboard
+   is still open, hide it with Android's bottom-left down arrow.
+   Don't press Back again after it closes. That opens
    a prompt to discard the changes. Choose **Cancel** if that prompt appears.
 5. Reopen settings. Check that the path is still there.
 6. On **General**, change **Wine Version** to **Proton 11.0-2 ARM64EC**, component
@@ -279,8 +271,7 @@ typing. Keep it floating for the launcher sign-in too.
    **`D:/Launcher/nexon_launcher.exe`** and **Screen Size 1366x768**. Then close
    settings and continue to step 9 before tapping Play.
 
-Use that exact screen size for the game. At the fresh default of 1280x720, a
-tap on channel 9 selected channel 1. Setting 1366x768 made direct taps line up.
+Use **1366x768** so your taps line up with the game's buttons.
 
 Keep this container. Creating a second one would leave the launcher's installed
 Windows files and registration behind.
@@ -296,9 +287,8 @@ Windows files and registration behind.
 
 ## 9. Apply the graphics fix
 
-Do this before launching the game. The **System** driver used for the installer
-made clouds and pieces of the map flash, disappear or draw in the wrong place.
-Switching to this Turnip version cleared that corruption in the same area.
+Do this before launching the game. Switch from the installer's **System** driver
+to **Turnip** to fix flashing clouds and broken scenery.
 
 1. On the **same NexonLauncher entry**, open its options, then **Edit container**.
 2. Open the **Graphics** tab and set these values:
@@ -317,8 +307,7 @@ Switching to this Turnip version cleared that corruption in the same area.
 5. Tap **Play**. The first launch after changing runtimes prepares the Proton 11
    base. Wait for that to finish, then let Nexon Launcher download its own updates.
 
-Keep **Display Renderer** on **GL**. Vulkan and SurfaceFlinger didn't give a
-usable launcher in this check.
+Keep **Display Renderer** on **GL** when using these settings.
 
 <details>
 <summary>Check the graphics choices against this picture</summary>
@@ -342,15 +331,11 @@ usable launcher in this check.
 7. Wait for any **What's New** popup to load, then tap **Close** at its bottom
    right. This popup sits over the launcher and can block clicks behind it.
 8. Tap the **square maximize button on Nexon Launcher's title bar**, beside
-   the **X** at the top right. Use the launcher maximized. During the fresh
-   reinstall, this removed the duplicated and corrupted graphics around the
-   window while the game kept downloading.
+   the **X** at the top right. Keep the launcher maximized to avoid duplicated
+   window edges.
 
 If a blank panel appears after login, use the restart steps under
 [a frozen or corrupted launcher](#the-launcher-freezes-or-shows-corrupted-graphics).
-On the original setup, restarting made the panel appear as **What's New**, and
-I could close it. The fresh reinstall also hit corrupted graphics at the game
-download dialog. Restarting cleared that screen, but required another sign-in.
 
 ## 11. Download Classic World
 
@@ -360,40 +345,37 @@ download dialog. Restarting cleared that screen, but required another sign-in.
    In the download dialog, leave **Game installation location** at its default,
    **`C:\Nexon\Library\maplestorycw`**. It should show about **2 GB** required.
    Tap the blue **Download** button at the bottom right.
-4. Wait for the button to change to **Play**. During the fresh reinstall, the
-   progress screen froze at **85%** even though installation had completed.
-   If progress and buttons stop responding, use the
+4. Wait for the button to change to **Play**. If the progress screen freezes,
+   including at **85%**, use the
    [restart steps below](#the-launcher-freezes-or-shows-corrupted-graphics),
-   close **What's New**, and check the button again. Mine showed **Play** after
-   that restart, without downloading the game again.
+   close **What's New**, and check for **Play** before starting another download.
 5. Tap **Play**, wait through the startup logos, then tap **Log In** in the game.
 6. Tap your world, then tap a channel. Check that the red circle marks the
    channel you tapped. Tap **Go to the selected world** above the channel list.
 
-You should reach **Select a Character**. I checked Windia, channel 9, after the
-service opened at 2 PM Eastern on October 21, 2026. You can choose your own world
-and channel. You can select your character to play, then follow the controller
-setup below. Character creation wasn't part of this walkthrough.
+You should now see **Select a Character**. Create a character if you need one,
+or select an existing character to enter the game. Then set up the controller below.
 
-## Set up the controller
+## 12. Set up the controller
 
-Follow [controller setup](docs/controller-setup.md) to import the Thor layout.
-It maps movement, jump, attack, pickup and menus to the game's keyboard controls.
-The game's built-in controller layout didn't respond in the tested setup.
-GameNative sends keyboard presses, so MapleStory's **Controller** tab won't
-match this layout. To move an action to another button, follow
-[Change controller buttons](docs/controller-setup.md#change-controller-buttons).
-It shows where to edit, how to clear the old binding and how to save your changes.
+1. Follow [Import the layout](docs/controller-setup.md#import-the-layout) to load
+   the Thor controls in GameNative.
+2. Try the left stick or D-pad to move, **A** to jump and **X** to attack.
+3. To move an action to another button, follow
+   [Change controller buttons](docs/controller-setup.md#change-controller-buttons).
+
+GameNative sends keyboard presses for the Thor's buttons. That's why MapleStory's
+**Controller** tab doesn't match this layout. Make button changes in GameNative's
+**Edit Physical Controller** screen.
 
 ## Next time you play
 
-Open **GameNative**, choose **NexonLauncher**, and tap **Play**. In Nexon Launcher,
-close **What's New** if it appears and maximize the window. Choose **MapleStory**,
-then **Classic World**, then **Play**. In the game, tap **Log In** and choose your
-world and channel as in step 11.
-
-I exited through GameNative's Quick Menu and repeated this route. Nexon kept
-the login, and the game reached character selection again with direct touch.
+1. Open **GameNative**, choose **NexonLauncher**, and tap **Play**.
+2. Sign into Nexon if asked. Close **What's New** if it appears and maximize
+   the launcher window.
+3. Choose **MapleStory → Classic World → Play**.
+4. In the game, tap **Log In**, choose your world and channel, then select
+   your character.
 
 Keep **Download/Launcher**. Those are the installed launcher files. Also keep
 **Download/NexonLauncher**, its original installer, `.gamenative` marker and
@@ -423,15 +405,15 @@ Corporation** signature for the helper to accept it.
 
 The helper keeps your installed app and stops. Don't uninstall it just to get
 past this message. Uninstalling can remove your containers and their data.
-You can use [manual file preparation](docs/manual-setup.md) with your current
-app, but the recorded recipe was tested with **1.3.0**, version code **24**.
-Other versions still need testing.
+This guide uses **1.3.0**, version code **24**. Use
+[manual file preparation](docs/manual-setup.md) to copy the files yourself if
+you want to keep another version. Its menus and settings may differ.
 
 ### A different file already exists on the Thor
 
 The helper won't overwrite it. Use the Thor's file manager to move that file
 somewhere safe, then run **Start-Setup** again. Keep any working launcher and
-container. The helper only needs the installer and runtime destinations listed
+container. The helper only needs the three file destinations listed
 in step 3.
 
 ### A setting or executable path won't stick
@@ -455,8 +437,7 @@ For a missing executable, check **Download/Launcher/nexon_launcher.exe** and the
 Exit through GameNative's Quick Menu, then open the same entry's **Edit
 container → General**. Scroll down and set **Screen Size** to **1366x768 (16:9)**.
 Tap the outer Save icon and launch again. Check that Touchscreen Mode is on
-and Shooter Mode is off too. This fixed the channel-selection offset in the
-fresh walkthrough.
+and Shooter Mode is off too.
 
 ### The launcher freezes or shows corrupted graphics
 
@@ -464,20 +445,16 @@ fresh walkthrough.
 2. Tap the **red exit icon at the bottom left**. Wait for the library to return.
 3. Open the **same NexonLauncher entry** and tap **Play**.
 4. Sign in again if asked, close **What's New**, and maximize the launcher.
-   The first restart required another login; the next one kept the login and
-   showed the installed game's **Play** button. Keep your app data and the same
-   container.
+5. Choose **MapleStory → Classic World** and check for **Play**. Keep your app
+   data and the same container.
 
 If the launcher responds but the edges look duplicated or corrupted, first
-close **What's New** and maximize the launcher as described in step 10. This
-cleared the drawing glitches without another restart during the download.
+close **What's New** and maximize the launcher as described in step 10.
 
 ### Clouds or pieces of the map flash or draw in the wrong place
 
 Exit through GameNative's Quick Menu, then repeat
 [step 9, Apply the graphics fix](#9-apply-the-graphics-fix).
-This cleared the broken scenery captured with the System driver in the tutorial
-area. The follow-up recording stayed clear while moving and talking to an NPC.
 
 ### Nexon shows maintenance
 
@@ -485,23 +462,13 @@ Wait until the service opens and try again. Keep the working container settings.
 
 ## Files and sources
 
-The repo includes the helper, guide, [component manifest](setup-manifest.json)
-and [checksums of the saved originals](SHA256SUMS.txt). Downloads stay in the
-local `downloads` folder. The helper uses exact SHA-256 checks for GameNative,
-Proton and Google's USB tools. Nexon serves different bytes on repeated
-installer downloads, so it checks the trusted Nexon signature and exact version
-instead. It records that download's hash locally for reference.
-
-No installers, runtime binaries, game files, credentials, login sessions or
-container backups are published in this repo.
+The helper downloads the components from the official sources below. You can
+find the versions in [setup-manifest.json](setup-manifest.json) and file hashes
+in [SHA256SUMS.txt](SHA256SUMS.txt).
 
 - [GameNative](https://gamenative.app/) and [v1.3.0 release](https://github.com/utkarshdalal/GameNative/releases/tag/v1.3.0).
-- [Runtime component manifest at the checked revision](https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json).
+- [GameNative runtime component manifest](https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json).
 - [Nexon's official launcher download help](https://playersupport.nexon.com/hc/en-us/articles/204158099-Where-can-I-find-the-Nexon-Launcher).
 - [Google's Platform Tools](https://developer.android.com/tools/releases/platform-tools) and [USB debugging instructions](https://developer.android.com/studio/debug/dev-options).
 
-The settings come from the working Thor setup and notes saved on October 21,
-2026. The upstream links supply the components. This device setup isn't an
-official Nexon or GameNative support claim.
-
-For command-line options and the helper's checks, see [helper notes](docs/helper-notes.md).
+For command-line options, see [helper notes](docs/helper-notes.md).

@@ -18,8 +18,8 @@ the files yourself. You will join the main guide at step 4 afterward.
 5. Wait until Android says the app is installed.
 
 If you already have a different GameNative version, keep its data. Don't
-uninstall it to follow this guide. The tested version was **1.3.0**, version
-code **24**. Another version may behave differently.
+uninstall it to follow this guide. This guide uses **1.3.0**, version code **24**.
+Menus and settings may differ in another version.
 
 ## 2. Get the Nexon installer
 
@@ -31,7 +31,7 @@ code **24**. Another version may behave differently.
 4. Copy the installer into that folder and name it **NexonLauncherSetup.exe**.
 
 You should now have **Download/NexonLauncher/NexonLauncherSetup.exe**.
-The tested installer was version **2.4.0.0**. Nexon can change the version served
+This guide uses installer version **2.4.0.0**. Nexon can change the version served
 by its download page. If the page won't offer a Windows download in the Thor's
 browser, enable the browser's **Desktop site** option, or download it on a
 computer. Don't choose the macOS `.pkg` file.

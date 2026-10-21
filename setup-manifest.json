@@ -8,6 +8,9 @@
   "artifacts": [
     {
       "name": "GameNative",
+      "purpose": "gamenative",
+      "download_filename": "gamenative-v1.3.0.apk",
+      "verification": "sha256",
       "version": "1.3.0",
       "version_code": 24,
       "target_sdk": 28,
@@ -20,18 +23,25 @@
     },
     {
       "name": "Nexon Launcher installer",
+      "purpose": "nexon",
+      "download_filename": "NexonLauncherSetup.exe",
+      "verification": "nexon_signature_and_version",
       "version": "2.4.0.0",
       "backup_filename": "NexonLauncherSetup-2.4.0.0.exe",
       "install_filename": "NexonLauncherSetup.exe",
       "bytes": 7881144,
       "sha256": "30bf735dc722664d7a233ac35d1109c0373986f4d09a2fc6c5eb9935d068a6a7",
       "download_page": "https://www.nexon.com/main/en/download/launcher",
+      "url": "https://download.nxfs.nexon.com/download-launcher?file=NexonLauncherSetup.exe",
       "authenticode_status_when_checked": "Valid",
       "authenticode_signer": "NEXON Korea Corporation",
-      "provenance": "Official online bootstrap installer; download page is not version-pinned"
+      "provenance": "Official online bootstrap installer. Repeated downloads of version 2.4.0.0 have different SHA-256 hashes with valid Nexon signatures. The recorded hash identifies the saved original; the helper checks the signer and exact file version instead."
     },
     {
       "name": "Proton 11.0-2 ARM64EC",
+      "purpose": "runtime",
+      "download_filename": "proton-11.0-2-arm64ec.wcp",
+      "verification": "sha256",
       "component_id": "proton-11.0-2-arm64ec-1",
       "version_name": "11.0-2-arm64ec",
       "version_code": 1,
@@ -44,6 +54,19 @@
       "url": "https://downloads.gamenative.app/proton-11.0-2-arm64ec.wcp",
       "manifest_url": "https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json",
       "provenance": "Official manifest entry and archived package profile identify this component; binary identity against the installed runtime was not compared"
+    },
+    {
+      "name": "Google Android Platform Tools for Windows",
+      "purpose": "usb_tools",
+      "download_filename": "platform-tools_r37.0.1-win.zip",
+      "verification": "sha256",
+      "version": "37.0.1",
+      "backup_filename": "Google-platform-tools-windows.zip",
+      "bytes": 8044989,
+      "sha256": "45f4d63113e895ebde0c90f194099a4676b6ac653bd28d54314a9e022bbc1a99",
+      "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-win.zip",
+      "source": "https://developer.android.com/tools/releases/platform-tools",
+      "provenance": "Pinned official Google download; size and SHA-256 match the saved USB tools archive"
     }
   ],
   "installer_runtime": "proton-9.0-x86_64",
@@ -53,7 +76,8 @@
     "runtime_id": "proton-11.0-2-arm64ec-1",
     "emulator_64_bit": "FEXCore 2605; included in tested APK",
     "emulator_32_bit": "Box64 0.4.2; last verified selection",
-    "graphics_driver": "Wrapper / System",
+    "graphics_driver": "Wrapper",
+    "graphics_driver_version": "System",
     "display_renderer": "GL",
     "directx_wrapper": "DXVK",
     "resolution": "Default; numeric value not recorded",

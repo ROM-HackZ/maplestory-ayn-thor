@@ -34,7 +34,6 @@ restarts when its window froze. Longer sessions haven't been checked.
 - [Change controller buttons](docs/controller-setup.md#change-controller-buttons)
 - [Next time you play](#next-time-you-play)
 - [If something gets stuck](#if-something-gets-stuck)
-- [What I've checked](#what-ive-checked)
 - [Files and sources](#files-and-sources)
 
 ## Before you start
@@ -483,34 +482,6 @@ area. The follow-up recording stayed clear while moving and talking to an NPC.
 ### Nexon shows maintenance
 
 Wait until the service opens and try again. Keep the working container settings.
-
-## What I've checked
-
-The original setup installed Classic World, signed in through Nexon's normal
-security checks and reached character selection with touch input on an AYN Thor.
-The separate modern MapleStory Steam attempt failed. Steam login, Headless Steam,
-GE runtimes and newer FEX experiments aren't needed for this route. The later
-gameplay check uses Turnip under Wrapper, as recorded in step 9.
-
-The helper's download checks, repeat runs and USB command handling passed the
-Windows checks with a simulated device. A fresh download of the public ZIP
-then installed GameNative and copied the checked files onto the Thor. Runtime
-import, installer configuration, launcher installation and the switch to
-Proton 11 passed on the device. Nexon sign-in, the game download and launch,
-and Windia channel 9 character selection also passed. The launcher needed
-restarts for frozen windows, including a progress display stuck at 85% after
-installation had completed. Maximizing fixed duplicated window edges, and
-1366x768 fixed the game's touch offset. First-time USB authorization wasn't
-reset for this run. A later launch from the same entry kept the Nexon login and
-reached character selection again without a recovery restart.
-A short follow-up in East Entrance to Mushroom Town confirmed controller
-movement, jump, attack, NPC talk, inventory and the menu wheel. Before-and-after
-recordings showed the scenery corruption with System and clear output with
-turnip25.3.0_R3_Auto. Character creation, later areas, performance and longer
-sessions haven't been checked.
-
-The fresh run imported the checked Proton package listed in the manifest.
-Future Nexon, game or server updates may change what works.
 
 ## Files and sources
 

@@ -21,10 +21,14 @@ If 1.3.0, version code 24, is already installed, it keeps the app. Any other
 installed version stops the run. There is no uninstall, downgrade or data-clear
 command in the helper.
 
-It copies only these two files onto the Thor:
+It copies these three files onto the Thor:
 
 - `/sdcard/Download/NexonLauncher/NexonLauncherSetup.exe`
 - `/sdcard/Download/ThorSetup/proton-11.0-2-arm64ec.wcp`
+- `/sdcard/Download/ThorSetup/MapleStory-Thor.icp`
+
+The controller profile comes from this repo's `controls` folder. Importing it
+through GameNative is a separate step in [controller setup](controller-setup.md).
 
 Existing matching files are reused. Different existing files stop the run.
 New copies use a `.partial` path first and are checked on the device before
@@ -85,6 +89,8 @@ download to Windia channel 9 character selection. Nexon Launcher needed
 restarts when its UI froze. Screen Size 1366x768 fixed direct-touch alignment
 in the game. The main guide includes the setting and recovery steps. A later
 launch kept Nexon signed in and reached character selection again without a
-recovery restart. First-time USB authorization wasn't reset. Character creation
-and gameplay weren't tested.
+recovery restart. A later tutorial check confirmed the controller profile and
+cleared recorded scenery corruption with turnip25.3.0_R3_Auto. The helper's new
+profile-copy path also passed hash readback on the real Thor. First-time USB
+authorization wasn't reset. Character creation and longer sessions weren't tested.
 Don't describe simulated USB checks as device testing.

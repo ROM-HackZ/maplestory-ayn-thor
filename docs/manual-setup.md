@@ -47,6 +47,10 @@ computer. Don't choose the macOS `.pkg` file.
 You should now have **Download/ThorSetup/proton-11.0-2-arm64ec.wcp**.
 Downloading the package doesn't install it yet. You'll import it in GameNative.
 
+For the optional controller layout, also copy this repo's
+[MapleStory-Thor.icp](../controls/MapleStory-Thor.icp) into **Download/ThorSetup**.
+Import it after launching the game, following [controller setup](controller-setup.md).
+
 ## 4. Continue with the settings
 
 Go to [step 4 of the main guide](../README.md#4-open-gamenative-and-add-the-runtime).

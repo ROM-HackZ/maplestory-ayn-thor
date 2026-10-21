@@ -3,9 +3,16 @@
   "device": "AYN Thor",
   "game": "MapleStory Classic World",
   "route": "Official standalone Nexon Launcher as a GameNative custom game",
-  "verified_endpoint": "Fresh public ZIP setup reached Windia / channel 9 / Select a Character; direct touch aligned at 1366x768; character creation and gameplay not tested",
+  "verified_endpoint": "Fresh public ZIP setup reached Windia / channel 9 / Select a Character; direct touch aligned at 1366x768. Follow-up checked controller input and graphics during short tutorial gameplay. Character creation and longer sessions not tested.",
   "fresh_reinstall_tested": true,
   "next_launch_tested": true,
+  "controller_profile": {
+    "file": "controls/MapleStory-Thor.icp",
+    "device_path": "/sdcard/Download/ThorSetup/MapleStory-Thor.icp",
+    "name": "MapleStory Classic World - Thor",
+    "verified": "Physical A jump and X attack, then left stick/D-pad movement, B NPC talk, Select inventory and RT radial menu confirmed by user on the Thor",
+    "scope": "Apply physicalController and radialMenu sections to the existing NexonLauncher entry"
+  },
   "fresh_reinstall_notes": "Existing USB authorization retained. Nexon Launcher needed Quick Menu exit and same-entry restarts for frozen windows, including 85% progress after installation completed. Maximize cleared duplicated edges.",
   "artifacts": [
     {
@@ -79,7 +86,7 @@
     "emulator_64_bit": "FEXCore 2605; included in tested APK",
     "emulator_32_bit": "Box64 0.4.2; last verified selection",
     "graphics_driver": "Wrapper",
-    "graphics_driver_version": "System",
+    "graphics_driver_version": "turnip25.3.0_R3_Auto",
     "display_renderer": "GL",
     "directx_wrapper": "DXVK",
     "resolution": "1366x768 (16:9); General tab Screen Size; fixes direct-touch offset seen at default 1280x720",
@@ -88,6 +95,7 @@
     "wine_box_debug_logging": false,
     "temporary_winedebug_override": null,
     "touchscreen_mode": true,
-    "shooter_mode": false
+    "shooter_mode": false,
+    "graphics_verification": "System driver produced duplicated scenery and broken tiles in recorded frames. With turnip25.3.0_R3_Auto, a 12-second follow-up recording in East Entrance to Mushroom Town showed normal camera movement and NPC dialogs without the prior corruption. User also reported the fix. Longer sessions not tested."
   }
 }

@@ -5,14 +5,16 @@ that worked through the official Nexon Launcher in GameNative. I've written it
 down so I can put it back after a reinstall, and so you can follow it too.
 
 The Windows helper downloads the files, checks them, installs GameNative and
-copies the installer and runtime onto the Thor. Then you follow the steps below
-to enter the settings and sign into Nexon. You don't need to write commands.
+copies the installer, runtime and controller layout onto the Thor. Then you
+follow the steps below to enter the settings and sign into Nexon. You don't
+need to write commands.
 
 Checked on October 21, 2026: a fresh setup from the public ZIP reached **Select
 a Character** on the Thor. Touch worked through login, world and channel
-selection with Screen Size set to 1366x768. Nexon Launcher needed restarts when
-its window froze. Those recovery steps are included below. Character creation
-and gameplay haven't been checked.
+selection with Screen Size set to 1366x768. A short gameplay check then confirmed
+the controller layout, and switching the graphics driver version to Turnip
+stopped the flashing and broken scenery seen with System. Nexon Launcher needed
+restarts when its window froze. Longer sessions haven't been checked.
 
 ## Before you start
 
@@ -83,6 +85,7 @@ At that point you should have:
 | GameNative in the app list | The Android app that runs the launcher |
 | `Download/NexonLauncher/NexonLauncherSetup.exe` | The Windows installer you'll run inside GameNative |
 | `Download/ThorSetup/proton-11.0-2-arm64ec.wcp` | The runtime you'll import in the next step |
+| `Download/ThorSetup/MapleStory-Thor.icp` | The optional controller layout |
 
 You can unplug the USB cable now. Keep the Thor connected to Wi-Fi.
 
@@ -238,9 +241,10 @@ typing. Keep it floating for the launcher sign-in too.
 5. Reopen settings. Check that the path is still there.
 6. On **General**, change **Wine Version** to **Proton 11.0-2 ARM64EC**, component
    **`proton-11.0-2-arm64ec-1`**.
-7. Check the remaining settings against this table. Keep the graphics choices
-   from step 6. **Screen Size** is farther down the General tab. Open its list
-   and scroll inside the list to find **1366x768**.
+7. Check the remaining settings against this table. On **Graphics**, keep
+   **Wrapper**, **GL** and **DXVK**, but change **Graphics Driver Version** from
+   **System** to **turnip25.3.0_R3_Auto**. **Screen Size** is farther down the
+   General tab. Open its list and scroll inside the list to find **1366x768**.
 
 | Setting | Choose or enter |
 |---|---|
@@ -248,7 +252,7 @@ typing. Keep it floating for the launcher sign-in too.
 | Emulation tab: FEXCore Version / 64-bit Emulator | 2605 / FEXCore |
 | Emulation tab: 32-bit Emulator / Box64 Version | Box64 / 0.4.2 |
 | Graphics driver | Wrapper |
-| Wrapper's graphics driver version | System |
+| Wrapper's graphics driver version | turnip25.3.0_R3_Auto |
 | Display renderer | GL |
 | DirectX wrapper | DXVK |
 | General tab: Screen Size | 1366x768 (16:9) |
@@ -264,6 +268,13 @@ typing. Keep it floating for the launcher sign-in too.
 Use that exact screen size for the game. At the fresh default of 1280x720, a
 tap on channel 9 selected channel 1. Setting 1366x768 made direct taps line up.
 
+Use the exact Turnip version in the table too. With **System**, clouds and other
+pieces of the map flashed, disappeared or drew in the wrong place. A recording
+caught whole sections duplicated for a frame. **turnip25.3.0_R3_Auto** cleared
+that corruption in the same area during the follow-up check. Keep **Display
+Renderer GL**. Changing it to Vulkan or SurfaceFlinger didn't give a usable
+launcher in this check.
+
 You should see Nexon Launcher now. Keep this container. Creating a second one
 would leave the launcher's installed Windows files and registration behind.
 The first launch after changing runtimes prepares the Proton 11 base. Wait for
@@ -275,6 +286,8 @@ that to finish, then let Nexon Launcher download its own updates.
 ![General tab with Proton 11 ARM64EC and D:/Launcher/nexon_launcher.exe saved](docs/images/launcher-general.png)
 
 ![General tab with Screen Size set to 1366x768](docs/images/screen-size.png)
+
+![Runtime graphics choices with Wrapper, turnip25.3.0_R3_Auto, GL and DXVK](docs/images/launcher-graphics.png)
 
 </details>
 
@@ -323,7 +336,14 @@ download dialog. Restarting cleared that screen, but required another sign-in.
 
 You should reach **Select a Character**. I checked Windia, channel 9, after the
 service opened at 2 PM Eastern on October 21, 2026. You can choose your own world
-and channel. Character creation and gameplay still need checking.
+and channel. You can select your character to play, then follow the controller
+setup below. Character creation wasn't part of this walkthrough.
+
+## Set up the controller
+
+Follow [controller setup](docs/controller-setup.md) to import the Thor layout.
+It maps movement, jump, attack, pickup and menus to the game's keyboard controls.
+The game's built-in controller layout didn't respond in the tested setup.
 
 ## Next time you play
 
@@ -412,6 +432,15 @@ If the launcher responds but the edges look duplicated or corrupted, first
 close **What's New** and maximize the launcher as described in step 9. This
 cleared the drawing glitches without another restart during the download.
 
+### Clouds or pieces of the map flash or draw in the wrong place
+
+Exit through GameNative's Quick Menu. Open the same NexonLauncher entry's
+**Edit container → Graphics**. Set **Graphics Driver** to **Wrapper** and
+**Graphics Driver Version** to **turnip25.3.0_R3_Auto**. Keep **Display Renderer
+GL** and **DX Wrapper DXVK**, then tap the outer Save icon and launch again.
+This cleared the broken scenery captured with the System driver in the tutorial
+area. The follow-up recording stayed clear while moving and talking to an NPC.
+
 ### Nexon shows maintenance
 
 Wait until the service opens and try again. Keep the working container settings.
@@ -421,7 +450,8 @@ Wait until the service opens and try again. Keep the working container settings.
 The original setup installed Classic World, signed in through Nexon's normal
 security checks and reached character selection with touch input on an AYN Thor.
 The separate modern MapleStory Steam attempt failed. Steam login, Headless Steam,
-GE runtimes, Turnip and newer FEX experiments aren't needed for this route.
+GE runtimes and newer FEX experiments aren't needed for this route. The later
+gameplay check uses Turnip under Wrapper, as recorded in step 8.
 
 The helper's download checks, repeat runs and USB command handling passed the
 Windows checks with a simulated device. A fresh download of the public ZIP
@@ -434,7 +464,10 @@ installation had completed. Maximizing fixed duplicated window edges, and
 1366x768 fixed the game's touch offset. First-time USB authorization wasn't
 reset for this run. A later launch from the same entry kept the Nexon login and
 reached character selection again without a recovery restart.
-Character creation, gameplay, controller bindings, performance and longer
+A short follow-up in East Entrance to Mushroom Town confirmed controller
+movement, jump, attack, NPC talk, inventory and the menu wheel. Before-and-after
+recordings showed the scenery corruption with System and clear output with
+turnip25.3.0_R3_Auto. Character creation, later areas, performance and longer
 sessions haven't been checked.
 
 The fresh run imported the checked Proton package listed in the manifest.

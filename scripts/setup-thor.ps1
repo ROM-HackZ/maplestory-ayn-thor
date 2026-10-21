@@ -192,6 +192,7 @@ function Invoke-ThorSetup {
     Install-SetupGameNative $AdbPath $device $files.gamenative $app
     Copy-SetupFile $AdbPath $device $files.nexon '/sdcard/Download/NexonLauncher/NexonLauncherSetup.exe'
     Copy-SetupFile $AdbPath $device $files.runtime '/sdcard/Download/ThorSetup/proton-11.0-2-arm64ec.wcp'
+    Copy-SetupFile $AdbPath $device (Join-Path $script:RepoRoot 'controls\MapleStory-Thor.icp') '/sdcard/Download/ThorSetup/MapleStory-Thor.icp'
     Write-Host ''
     Write-Host 'Files ready on the Thor. Continue with step 4 in README.md.' -ForegroundColor Green
     Write-Host 'Open GameNative yourself. Import the runtime, add NexonLauncher, then follow the settings in the guide.'

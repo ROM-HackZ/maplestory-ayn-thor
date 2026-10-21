@@ -386,24 +386,33 @@ If a blank panel appears after login, use the restart steps under
    including at **85%**, use the
    [restart steps below](#the-launcher-freezes-or-shows-corrupted-graphics),
    close **What's New**, and check for **Play** before starting another download.
-5. Tap **Play**, wait through the startup logos, then tap **Log In** in the game.
-6. Tap your world, then tap a channel. Check that the red circle marks the
-   channel you tapped. Tap **Go to the selected world** above the channel list.
-
-You should now see **Select a Character**. Create a character if you need one,
-or select an existing character to enter the game. Then set up the controller below.
+5. Tap **Play** and wait through the startup logos. Leave the game on its
+   **Log In** screen while you import the controller layout below. This keeps
+   the controller menus from pausing an active server connection during setup.
 
 ## 12. Set up the controller
 
 1. Follow [Import the layout](docs/controller-setup.md#import-the-layout) to load
    the Thor controls in GameNative.
-2. Try the left stick or D-pad to move, **A** to jump and **X** to attack.
-3. To move an action to another button, follow
+2. Back in the game, tap **Log In**. Tap your world, then tap a channel. Check
+   that the red circle marks the channel you tapped. Tap **Go to the selected
+   world** above the channel list.
+3. On **Select a Character**, create a character if you need one, or tap your
+   existing character and then **Select a character** to enter the game.
+4. Try the left stick or D-pad to move, **A** to jump and **X** to attack.
+5. To move an action to another button, follow
    [Change controller buttons](docs/controller-setup.md#change-controller-buttons).
 
 GameNative sends keyboard presses for the Thor's buttons. That's why MapleStory's
 **Controller** tab doesn't match this layout. Make button changes in GameNative's
 **Edit Physical Controller** screen.
+
+<details>
+<summary>Check the selected channel</summary>
+
+![World list with CH9 circled in red and Go to the selected world above it](docs/images/world-channel.png)
+
+</details>
 
 ## Next time you play
 

@@ -22,7 +22,8 @@ key in GameNative too.
    current setup helper copies it there alongside the runtime. If it's already
    there, continue below. If it's missing, follow
    [Copy the profile file](#copy-the-profile-file) first.
-2. Launch Classic World through your existing **NexonLauncher** entry.
+2. Launch Classic World through your existing **NexonLauncher** entry. During
+   setup, leave it on the game's **Log In** screen until the layout is applied.
 3. Press **Android Back** to open **Quick Menu**, then open **Controller**.
 4. Scroll down inside that panel and tap **Control Profiles**.
 5. Tap the **down-arrow import icon** at the top right, beside **+**.
@@ -34,6 +35,20 @@ key in GameNative too.
    **Apply** in the popup. These settings apply to the current game entry.
 8. Close Control Profiles and Quick Menu. Tap the center **Play** control if
    the game is paused.
+
+GameNative pauses the game while these menus are open. If MapleStory returns
+to its login screen after editing, tap **OK** on the connection message, then
+**Log In** and choose your world, channel and character again. The saved
+controller layout stays applied.
+
+<details>
+<summary>Check the imported layout and Apply options</summary>
+
+![Imported Thor layout showing 24 physical bindings, 8 radial slots and Add to library](images/controller-import.png)
+
+![Apply popup with Physical controller and Radial Menu checked](images/controller-apply.png)
+
+</details>
 
 ## Copy the profile file
 
@@ -107,3 +122,12 @@ B should now jump and A should talk to NPCs.
 These edits apply to the current NexonLauncher entry. They don't change the
 downloaded `MapleStory-Thor.icp` file. Applying that original profile again
 replaces your changes with the supplied layout.
+
+<details>
+<summary>Find the button rows, Clear Binding and Save</summary>
+
+![Face Buttons in the physical controller editor with A, B, X and Y assignments and the disk Save icon](images/controller-buttons.png)
+
+![A button key picker with Keyboard selected, Clear Binding at the lower left and the checkmark at the upper right](images/controller-key-picker.png)
+
+</details>

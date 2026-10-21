@@ -1,0 +1,67 @@
+{
+  "verified_on": "2026-10-21",
+  "device": "AYN Thor",
+  "game": "MapleStory Classic World",
+  "route": "Official standalone Nexon Launcher as a GameNative custom game",
+  "verified_endpoint": "Windia / channel 9 / Select a Character; touch input worked; no character created",
+  "fresh_reinstall_tested": false,
+  "artifacts": [
+    {
+      "name": "GameNative",
+      "version": "1.3.0",
+      "version_code": 24,
+      "target_sdk": 28,
+      "backup_filename": "GameNative-1.3.0-version24.apk",
+      "upstream_filename": "gamenative-v1.3.0.apk",
+      "bytes": 574151860,
+      "sha256": "f8ce62471142dd152f322436ceecc791604ec114106c7706f5d1e7e07420d602",
+      "url": "https://github.com/utkarshdalal/GameNative/releases/download/v1.3.0/gamenative-v1.3.0.apk",
+      "provenance": "Copy from installed app; size and SHA-256 match the official v1.3.0 standard APK release asset"
+    },
+    {
+      "name": "Nexon Launcher installer",
+      "version": "2.4.0.0",
+      "backup_filename": "NexonLauncherSetup-2.4.0.0.exe",
+      "install_filename": "NexonLauncherSetup.exe",
+      "bytes": 7881144,
+      "sha256": "30bf735dc722664d7a233ac35d1109c0373986f4d09a2fc6c5eb9935d068a6a7",
+      "download_page": "https://www.nexon.com/main/en/download/launcher",
+      "authenticode_status_when_checked": "Valid",
+      "authenticode_signer": "NEXON Korea Corporation",
+      "provenance": "Official online bootstrap installer; download page is not version-pinned"
+    },
+    {
+      "name": "Proton 11.0-2 ARM64EC",
+      "component_id": "proton-11.0-2-arm64ec-1",
+      "version_name": "11.0-2-arm64ec",
+      "version_code": 1,
+      "type": "Proton",
+      "variant": "bionic",
+      "target_sdk": 28,
+      "backup_filename": "proton-11.0-2-arm64ec.wcp",
+      "bytes": 98079159,
+      "sha256": "fffa467241bdae3eacd6ceb7e8096bb7793d617ce53a198dae8bc63a3453f595",
+      "url": "https://downloads.gamenative.app/proton-11.0-2-arm64ec.wcp",
+      "manifest_url": "https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json",
+      "provenance": "Official manifest entry and archived package profile identify this component; binary identity against the installed runtime was not compared"
+    }
+  ],
+  "installer_runtime": "proton-9.0-x86_64",
+  "same_container_required_after_install": true,
+  "run_settings": {
+    "variant": "bionic",
+    "runtime_id": "proton-11.0-2-arm64ec-1",
+    "emulator_64_bit": "FEXCore 2605; included in tested APK",
+    "emulator_32_bit": "Box64 0.4.2; last verified selection",
+    "graphics_driver": "Wrapper / System",
+    "display_renderer": "GL",
+    "directx_wrapper": "DXVK",
+    "resolution": "Default; numeric value not recorded",
+    "dxvk_subversion": "Default; exact version not recorded",
+    "extra_launch_arguments": "",
+    "wine_box_debug_logging": false,
+    "temporary_winedebug_override": null,
+    "touchscreen_mode": true,
+    "shooter_mode": false
+  }
+}

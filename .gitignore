@@ -1,0 +1,63 @@
+# Local scratch, downloads, backups and device exports
+.local/
+downloads/
+backups/
+outputs/
+artifacts/
+*.apk
+*.aab
+*.exe
+*.msi
+*.dll
+*.so
+*.wcp
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.*
+*.gz
+*.xz
+*.zst
+*.bak
+
+# Windows environments, installed launchers and game data
+prefix/
+prefixes/
+containers/
+drive_c/
+dosdevices/
+Launcher/
+NexonLauncher/
+Nexon/
+.gamenative/
+*.reg
+
+# Logs and crash dumps
+logs/
+*.log
+*.dmp
+*.hprof
+logcat*.txt
+
+# Credentials, account/session exports and signing material
+.env
+.env.*
+!.env.example
+credentials*
+secrets*
+*token*.json
+*session*.json
+cookies*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Editor and OS files
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

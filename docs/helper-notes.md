@@ -50,10 +50,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-thor.ps1
 .\scripts\setup-thor.ps1 -DownloadOnly -DownloadDirectory 'D:\Thor downloads'
 ```
 
-The helper expects the download filenames listed in the manifest. Files from
-the personal reinstall ZIP can be reused by copying and renaming them into
-`downloads` first. It checks them before use. A bad cached file is replaced only
-after its new download passes verification. Partial downloads restart rather
+The helper expects the download filenames listed in the manifest. Existing
+downloads can be reused with `-DownloadDirectory`. It checks them before use.
+A bad cached file is replaced only after its new download passes verification.
+Partial downloads restart rather
 than resume.
 
 `Start-Setup.cmd` uses a process-only execution-policy setting. It doesn't change
@@ -77,6 +77,9 @@ the game. Temporary test files stay under ignored `.local`.
 
 Also run download-only setup against the real upstream files when changing
 download handling. Check the Windows launcher, the guide's local links and the
-Git diff before publishing. A fresh Thor installation is still needed to check
-the whole helper and guide together. Don't describe simulated USB checks as
-device testing.
+Git diff before publishing. On October 21, 2026, the unmodified helper from a
+fresh public ZIP downloaded all four components, installed GameNative on the
+Thor and copied and checked the installer and runtime there. The guide passed
+through launcher installation and the runtime switch. Sign-in and the game
+steps are still being rechecked. First-time USB authorization wasn't reset.
+Don't describe simulated USB checks as device testing.

@@ -10,8 +10,9 @@ to enter the settings and sign into Nexon. You don't need to write commands.
 
 Checked on October 21, 2026: Classic World installed and reached **Select a
 Character**. Touch worked through login, world and channel selection. I haven't
-created a character or checked gameplay yet. The helper is new. Its computer
-checks have been tested, but a fresh install on a Thor still needs testing.
+created a character or checked gameplay yet. A fresh run from the public ZIP
+has also passed the helper, runtime import and launcher installation on the
+Thor. The repeat check from Nexon sign-in onward is still in progress.
 
 ## Before you start
 
@@ -28,6 +29,9 @@ inside Nexon Launcher on the Thor. No Python, Android Studio or root needed.
 
 If GameNative 1.3.0 is already installed, the helper keeps it and its data.
 For another version, it stops so you can decide what to do with it.
+Keep your existing GameNative installation and other games. Uninstalling
+GameNative removes the Windows environments and saved settings for every game
+in the app. This setup adds a single custom game to your existing library.
 
 Using a Mac, Linux or just the Thor? Follow [manual file preparation](docs/manual-setup.md),
 then join this guide at step 4.
@@ -91,17 +95,22 @@ A runtime is the software GameNative uses to run Windows programs. This setup
 uses one for installing Nexon Launcher and another for running it afterward.
 
 1. On the Thor, open **GameNative** from the Android app list.
-2. Finish its first-run setup and let any required files finish downloading.
-   Allow storage access if requested. You don't need a Steam login for this route.
-3. Open GameNative's **Settings**, then **Emulation**, then **Wine/Proton Manager**.
+2. On the Steam sign-in screen, tap **Skip login** at the bottom. Leave the Steam
+   fields empty. Let any required files finish downloading and allow storage
+   access if requested.
+3. In the library, tap the **three horizontal bars at the top right** to open
+   **System**, then tap **Settings**. Under **Emulation**, scroll down to
+   **Wine/Proton Manager** and tap it.
 4. Look at the installed versions. If **Proton 11.0-2 ARM64EC**, version code **1**,
    is already installed, keep it and skip to item 8.
-5. Tap **Import .wcp Package**.
+5. Scroll down inside the manager to **Import from local storage**, then tap
+   **Import .wcp Package**.
 6. In the Android file picker, open the Thor's internal storage, then
    **Download**, then **ThorSetup**. Select **proton-11.0-2-arm64ec.wcp**.
-7. Wait for its details to appear. Check that they say **Proton**,
-   **11.0-2-arm64ec**, version code **1**. Tap **Install Package** and wait for
-   installation to finish.
+7. Selecting the `.wcp` starts installation automatically. Wait, then scroll
+   down inside the manager. Look for **installed successfully** and an entry
+   named **Proton: proton-11.0-2-arm64ec** under **Installed Wine/Proton Versions**.
+   There was no separate **Install Package** button in the tested import flow.
 8. Close the manager and return to the library. The installer uses GameNative's
    bundled **Proton 9.0 x86_64** option. You'll select it in step 6. If GameNative
    asks to download required files, let that finish. Don't substitute Proton 11
@@ -109,6 +118,13 @@ uses one for installing Nexon Launcher and another for running it afterward.
 
 You should now have both runtimes available. The final Proton component ID is
 `proton-11.0-2-arm64ec-1`. Avoid similarly named packages ending in `-6`.
+
+<details>
+<summary>What the successful runtime import looks like</summary>
+
+![Proton installed successfully in Wine/Proton Manager](docs/images/runtime-installed.png)
+
+</details>
 
 ## 5. Add the Nexon installer to the library
 
@@ -118,10 +134,14 @@ You should now have both runtimes available. The final Proton component ID is
 3. In the folder picker, open internal storage, then **Download**, then
    **NexonLauncher**. Select this folder with **Use this folder** and allow access
    if asked. Select the folder, not the `.exe` file inside it.
+   If Android says **Can't use this folder** while you're in Download, scroll
+   down and open **NexonLauncher**. The restriction is on the parent Download
+   folder, not that subfolder.
 4. If an import prompt offers **Remove original after import**, leave that
    unchecked so the source folder stays on the Thor.
 5. The entry should appear as **NexonLauncher**. Use that name if asked to name it.
-6. Tap the entry. Open its options menu and choose **Custom Game Settings**.
+6. Tap the entry, then tap the **gear beside Play**. In the Options panel,
+   choose **Edit container**.
 
 In these settings, GameNative may call the Windows environment a **container**.
 Keep using this same entry and container throughout the guide.
@@ -131,50 +151,92 @@ Keep using this same entry and container throughout the guide.
 Open each named setting and choose the value below. Some fields are on other
 tabs or farther down the settings page.
 
-1. Set **Container variant** to **bionic**.
-2. Set **Wine/Proton** to **Proton 9.0 x86_64**, shown as `proton-9.0-x86_64`.
-3. Set **Graphics Driver** to **Wrapper**. For its driver version, choose **System**.
-4. Set **Display renderer** to **GL**.
-5. Set the DirectX wrapper to **DXVK**.
+1. On the **General** tab, check **Container Variant** is **bionic**.
+2. Open **Wine Version** and choose **proton-9.0-x86_64**. The fresh default
+   wasn't this version, so change it before running the installer.
+3. On **General**, open **Executable Path** and choose **NexonLauncherSetup.exe**.
+4. Open the **Graphics** tab. Set **Graphics Driver** to **Wrapper** and
+   **Graphics Driver Version** to **System**.
+5. On **Graphics**, set **Display Renderer** to **GL** and **DX Wrapper** to **DXVK**.
 6. Leave the resolution and DXVK subversion at their defaults. I didn't record
    their numeric values, so there isn't a specific number to enter here.
-7. Check the executable selection. For this first run, it should be
-   **NexonLauncherSetup.exe** from the folder you added.
+7. Return to **General** and check the executable still says **NexonLauncherSetup.exe**.
 8. Tap the **disk-shaped Save icon on the main settings window**.
-9. Open **Custom Game Settings** again. Check that the runtime still says
-   **Proton 9.0 x86_64** and the graphics settings match items 3 to 5.
+9. Open **Edit container** again. Check that the runtime still says
+   **proton-9.0-x86_64** and the graphics settings match items 4 and 5.
 
 The small **OK** button inside a popup only closes that popup. You still need
 that outer Save icon to save the container. Close settings after checking.
 
+<details>
+<summary>Check the installer settings against these pictures</summary>
+
+![General tab with bionic, Proton 9 x86_64 and NexonLauncherSetup.exe selected](docs/images/installer-general.png)
+
+![Graphics tab with Wrapper, System, GL and DXVK selected](docs/images/graphics-settings.png)
+
+</details>
+
 ## 7. Install Nexon Launcher
 
-1. On the NexonLauncher entry, tap **Play**. The Nexon setup window should open.
-2. Follow its language and setup prompts until it asks where to install.
-3. Change the destination to exactly **`D:\Launcher`**.
-4. Continue the installation and wait for it to finish.
-5. On the last screen, untick **Run Launcher** and the option to start the
-   launcher automatically with Windows. Then click **Finish**.
+1. On the NexonLauncher entry, tap **Play**. On a fresh setup, GameNative first
+   downloads **proton-9.0-x86_64** and prepares its Windows files. Keep it open
+   and wait for this to finish. The Nexon setup window should then open.
+2. Before clicking through setup, press **Android Back** to open **Quick Menu**.
+   Tap **Controller** (the D-pad icon), then scroll down in that panel. Turn
+   **Touchscreen Mode ON** and **Shooter Mode OFF**. An enabled mode has a purple
+   ring around its icon. Close the menu with **X**, then tap the center **Play**
+   button if the screen is paused.
+3. Choose your language, tap **OK**, then **Next**. Stop at **Choose Install Location**.
+4. Press **Android Back**, then choose **Controller → Keyboard** in Quick Menu.
+   The full-width keyboard covers the destination field. Tap the **four-square
+   menu** at the keyboard's upper left and choose **Floating**. Drag the handle
+   along the bottom of the floating keyboard to the right, until you can see
+   the destination field beside it.
+5. Tap the destination field. Replace its contents with exactly **`D:\Launcher`**.
+   If the old path isn't highlighted, hold the keyboard's **Backspace** until
+   the field is empty. Use **?123** for the colon, then the second symbols page
+   (**=\<**) for the backslash **`\`**. Tap **ABC** to return to letters.
+   Check the whole path while the keyboard is still open.
+6. Tap Android's **down arrow at the bottom-left edge of the screen** to hide
+   the keyboard. Check that the destination still says **`D:\Launcher`**, then
+   tap **Install** and wait for it to finish.
+7. On the last screen, untick **Run Nexon Launcher** and **Run Nexon Launcher
+   when my computer starts**. Then tap **Finish**.
 
 On the working setup, `D:` points to Android's `Download` folder. That means the
 installed launcher is now in **Download/Launcher**. Before continuing, use the
 Thor's file manager to check that this folder contains **nexon_launcher.exe**.
 If it doesn't, check the container's drive mapping before going further.
 
-If you can't click in the installer, use the touch settings in step 9, then
-return here. For typing, press **Android Back**, open **Quick Menu**, tap
-**Keyboard**, then tap the field you want to type in.
+The keyboard steps above use Gboard, the keyboard on my Thor. If yours looks
+different, use its floating or resize control so you can see the field while
+typing. Keep it floating for the launcher sign-in too.
+
+<details>
+<summary>See the floating keyboard beside the destination field</summary>
+
+![Floating keyboard moved right so D:\Launcher stays visible while typing](docs/images/floating-keyboard.png)
+
+</details>
 
 ## 8. Switch the same entry to the installed launcher
 
 1. Return to the **same NexonLauncher entry** in GameNative. Open its options
-   menu, then **Custom Game Settings**.
-2. Open the **Executable Path** dropdown and choose **Custom path**.
-3. Type exactly **`D:/Launcher/nexon_launcher.exe`**. This path uses forward
-   slashes. It points to the program installed in step 7.
-4. Tap the popup's **OK**, hide the keyboard, then tap the **outer disk Save icon**.
+   menu, then **Edit container**.
+2. On **General**, open **Executable Path** and choose **Custom path**. Tap the
+   text field. If the floating keyboard overlaps this dialog, drag its bottom
+   handle to the bottom of the screen to dock it. This GameNative dialog moves
+   above the docked keyboard, so the path stays visible.
+3. Hold the old filename until it's highlighted, then replace it with exactly
+   **`D:/Launcher/nexon_launcher.exe`**. This path uses forward slashes. It points
+   to the program installed in step 7.
+4. Tap the popup's **OK**, then tap the **outer disk Save icon**. The keyboard
+   closed automatically on my Thor. If it's still open, hide it with Android's
+   bottom-left down arrow. Don't press Back again after it closes: that opens
+   a prompt to discard the changes. Choose **Cancel** if that prompt appears.
 5. Reopen settings. Check that the path is still there.
-6. Change **Wine/Proton** to **Proton 11.0-2 ARM64EC**, component
+6. On **General**, change **Wine Version** to **Proton 11.0-2 ARM64EC**, component
    **`proton-11.0-2-arm64ec-1`**.
 7. Check the remaining settings against this table. Keep the graphics choices
    from step 6.
@@ -182,16 +244,15 @@ return here. For typing, press **Android Back**, open **Quick Menu**, tap
 | Setting | Choose or enter |
 |---|---|
 | Container variant | bionic |
-| 64-bit emulator | FEXCore, version 2605 |
-| 32-bit emulator | Box64, version 0.4.2, the last verified selection |
+| Emulation tab: FEXCore Version / 64-bit Emulator | 2605 / FEXCore |
+| Emulation tab: 32-bit Emulator / Box64 Version | Box64 / 0.4.2 |
 | Graphics driver | Wrapper |
 | Wrapper's graphics driver version | System |
 | Display renderer | GL |
 | DirectX wrapper | DXVK |
 | Resolution and DXVK subversion | Leave the defaults |
 | Extra launch arguments | Leave the field empty |
-| Wine/Box debug logging | Off |
-| Temporary `WINEDEBUG` setting, if you added one | Remove it |
+| Environment tab | Leave its defaults |
 
 8. Tap the **outer disk Save icon** again.
 9. Reopen settings and check both the **Proton 11.0-2 ARM64EC** selection and
@@ -199,16 +260,27 @@ return here. For typing, press **Android Back**, open **Quick Menu**, tap
 
 You should see Nexon Launcher now. Keep this container. Creating a second one
 would leave the launcher's installed Windows files and registration behind.
+The first launch after changing runtimes prepares the Proton 11 base. Wait for
+that to finish, then let Nexon Launcher download its own updates.
+
+<details>
+<summary>Check the saved launcher path and runtime</summary>
+
+![General tab with Proton 11 ARM64EC and D:/Launcher/nexon_launcher.exe saved](docs/images/launcher-general.png)
+
+</details>
 
 ## 9. Turn on touch and sign in
 
 1. While Nexon Launcher is running, press **Android Back** to open GameNative's
    **Quick Menu**.
-2. Open **Controller**.
-3. Turn **Touchscreen Mode ON** and **Shooter Mode OFF**.
+2. Open **Controller** and scroll down in its panel.
+3. Check **Touchscreen Mode is ON** and **Shooter Mode is OFF**, as set in step 7.
 4. Close the menu. If the screen is paused, tap the center **Play/resume** control.
 5. Tap the Nexon sign-in field. To open the keyboard, press **Android Back**,
-   choose **Quick Menu**, then **Keyboard**, and tap the field again.
+   choose **Controller → Keyboard**, and tap the field again. If it's docked,
+   use its **four-square menu → Floating** again. Move it to the right so the
+   sign-in field stays visible on the left.
 6. Sign into your own Nexon account and complete its email verification.
 
 If a blank panel appears after login, stop and restart GameNative normally.
@@ -300,10 +372,14 @@ security checks and reached character selection with touch input on an AYN Thor.
 The separate modern MapleStory Steam attempt failed. Steam login, Headless Steam,
 GE runtimes, Turnip and newer FEX experiments aren't needed for this route.
 
-The helper's download checks, repeat runs and USB command handling have been
-checked on Windows with a simulated device. I haven't used it for a fresh Thor
-reinstall yet. I also haven't checked character creation, gameplay, controller
-bindings, performance or longer sessions.
+The helper's download checks, repeat runs and USB command handling passed the
+Windows checks with a simulated device. A fresh download of the public ZIP
+then installed GameNative and copied the checked files onto the Thor. Runtime
+import, installer configuration, launcher installation and the switch to
+Proton 11 passed on the device. The repeat check from Nexon sign-in onward is
+still in progress. First-time USB authorization wasn't reset for this run.
+Character creation, gameplay, controller bindings, performance and longer
+sessions haven't been checked.
 
 The actual Proton runtime was checked during the working setup. The archived
 runtime has the matching component ID and version. I haven't compared its files
@@ -319,9 +395,8 @@ Proton and Google's USB tools. Nexon serves different bytes on repeated
 installer downloads, so it checks the trusted Nexon signature and exact version
 instead. It records that download's hash locally for reference.
 
-My local reinstall backup keeps the tested downloads. No installers, runtime
-binaries, game files, credentials, login sessions or container backups are
-published in this repo.
+No installers, runtime binaries, game files, credentials, login sessions or
+container backups are published in this repo.
 
 - [GameNative](https://gamenative.app/) and [v1.3.0 release](https://github.com/utkarshdalal/GameNative/releases/tag/v1.3.0).
 - [Runtime component manifest at the checked revision](https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json).

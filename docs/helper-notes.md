@@ -80,6 +80,11 @@ download handling. Check the Windows launcher, the guide's local links and the
 Git diff before publishing. On October 21, 2026, the unmodified helper from a
 fresh public ZIP downloaded all four components, installed GameNative on the
 Thor and copied and checked the installer and runtime there. The guide passed
-through launcher installation and the runtime switch. Sign-in and the game
-steps are still being rechecked. First-time USB authorization wasn't reset.
+through launcher installation, the runtime switch, Nexon sign-in and the game
+download to Windia channel 9 character selection. Nexon Launcher needed
+restarts when its UI froze. Screen Size 1366x768 fixed direct-touch alignment
+in the game. The main guide includes the setting and recovery steps. A later
+launch kept Nexon signed in and reached character selection again without a
+recovery restart. First-time USB authorization wasn't reset. Character creation
+and gameplay weren't tested.
 Don't describe simulated USB checks as device testing.

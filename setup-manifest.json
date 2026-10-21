@@ -3,8 +3,10 @@
   "device": "AYN Thor",
   "game": "MapleStory Classic World",
   "route": "Official standalone Nexon Launcher as a GameNative custom game",
-  "verified_endpoint": "Windia / channel 9 / Select a Character; touch input worked; no character created",
-  "fresh_reinstall_tested": false,
+  "verified_endpoint": "Fresh public ZIP setup reached Windia / channel 9 / Select a Character; direct touch aligned at 1366x768; character creation and gameplay not tested",
+  "fresh_reinstall_tested": true,
+  "next_launch_tested": true,
+  "fresh_reinstall_notes": "Existing USB authorization retained. Nexon Launcher needed Quick Menu exit and same-entry restarts for frozen windows, including 85% progress after installation completed. Maximize cleared duplicated edges.",
   "artifacts": [
     {
       "name": "GameNative",
@@ -53,7 +55,7 @@
       "sha256": "fffa467241bdae3eacd6ceb7e8096bb7793d617ce53a198dae8bc63a3453f595",
       "url": "https://downloads.gamenative.app/proton-11.0-2-arm64ec.wcp",
       "manifest_url": "https://raw.githubusercontent.com/utkarshdalal/GameNative/f3f954f54b98d75b79feb7b8cdff41c7d4d935a7/manifest.json",
-      "provenance": "Official manifest entry and archived package profile identify this component; binary identity against the installed runtime was not compared"
+      "provenance": "Official manifest entry identifies this component. The fresh walkthrough imported this size- and SHA-256-checked package through GameNative's local package picker."
     },
     {
       "name": "Google Android Platform Tools for Windows",
@@ -80,7 +82,7 @@
     "graphics_driver_version": "System",
     "display_renderer": "GL",
     "directx_wrapper": "DXVK",
-    "resolution": "Default; numeric value not recorded",
+    "resolution": "1366x768 (16:9); General tab Screen Size; fixes direct-touch offset seen at default 1280x720",
     "dxvk_subversion": "Default; exact version not recorded",
     "extra_launch_arguments": "",
     "wine_box_debug_logging": false,

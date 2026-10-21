@@ -8,11 +8,11 @@ The Windows helper downloads the files, checks them, installs GameNative and
 copies the installer and runtime onto the Thor. Then you follow the steps below
 to enter the settings and sign into Nexon. You don't need to write commands.
 
-Checked on October 21, 2026: Classic World installed and reached **Select a
-Character**. Touch worked through login, world and channel selection. I haven't
-created a character or checked gameplay yet. A fresh run from the public ZIP
-has also passed the helper, runtime import and launcher installation on the
-Thor. The repeat check from Nexon sign-in onward is still in progress.
+Checked on October 21, 2026: a fresh setup from the public ZIP reached **Select
+a Character** on the Thor. Touch worked through login, world and channel
+selection with Screen Size set to 1366x768. Nexon Launcher needed restarts when
+its window froze. Those recovery steps are included below. Character creation
+and gameplay haven't been checked.
 
 ## Before you start
 
@@ -158,8 +158,8 @@ tabs or farther down the settings page.
 4. Open the **Graphics** tab. Set **Graphics Driver** to **Wrapper** and
    **Graphics Driver Version** to **System**.
 5. On **Graphics**, set **Display Renderer** to **GL** and **DX Wrapper** to **DXVK**.
-6. Leave the resolution and DXVK subversion at their defaults. I didn't record
-   their numeric values, so there isn't a specific number to enter here.
+6. Leave **Screen Size** at **1280x720** for the installer and leave the DXVK
+   subversion at its default. You'll change Screen Size for the game in step 8.
 7. Return to **General** and check the executable still says **NexonLauncherSetup.exe**.
 8. Tap the **disk-shaped Save icon on the main settings window**.
 9. Open **Edit container** again. Check that the runtime still says
@@ -239,7 +239,8 @@ typing. Keep it floating for the launcher sign-in too.
 6. On **General**, change **Wine Version** to **Proton 11.0-2 ARM64EC**, component
    **`proton-11.0-2-arm64ec-1`**.
 7. Check the remaining settings against this table. Keep the graphics choices
-   from step 6.
+   from step 6. **Screen Size** is farther down the General tab. Open its list
+   and scroll inside the list to find **1366x768**.
 
 | Setting | Choose or enter |
 |---|---|
@@ -250,13 +251,18 @@ typing. Keep it floating for the launcher sign-in too.
 | Wrapper's graphics driver version | System |
 | Display renderer | GL |
 | DirectX wrapper | DXVK |
-| Resolution and DXVK subversion | Leave the defaults |
+| General tab: Screen Size | 1366x768 (16:9) |
+| DXVK subversion | Leave the default |
 | Extra launch arguments | Leave the field empty |
 | Environment tab | Leave its defaults |
 
 8. Tap the **outer disk Save icon** again.
-9. Reopen settings and check both the **Proton 11.0-2 ARM64EC** selection and
-   **`D:/Launcher/nexon_launcher.exe`**. Then close settings and tap **Play**.
+9. Reopen settings and check the **Proton 11.0-2 ARM64EC** selection,
+   **`D:/Launcher/nexon_launcher.exe`** and **Screen Size 1366x768**. Then close
+   settings and tap **Play**.
+
+Use that exact screen size for the game. At the fresh default of 1280x720, a
+tap on channel 9 selected channel 1. Setting 1366x768 made direct taps line up.
 
 You should see Nexon Launcher now. Keep this container. Creating a second one
 would leave the launcher's installed Windows files and registration behind.
@@ -267,6 +273,8 @@ that to finish, then let Nexon Launcher download its own updates.
 <summary>Check the saved launcher path and runtime</summary>
 
 ![General tab with Proton 11 ARM64EC and D:/Launcher/nexon_launcher.exe saved](docs/images/launcher-general.png)
+
+![General tab with Screen Size set to 1366x768](docs/images/screen-size.png)
 
 </details>
 
@@ -282,20 +290,36 @@ that to finish, then let Nexon Launcher download its own updates.
    use its **four-square menu → Floating** again. Move it to the right so the
    sign-in field stays visible on the left.
 6. Sign into your own Nexon account and complete its email verification.
+7. Wait for any **What's New** popup to load, then tap **Close** at its bottom
+   right. This popup sits over the launcher and can block clicks behind it.
+8. Tap the **square maximize button on Nexon Launcher's title bar**, beside
+   the **X** at the top right. Use the launcher maximized. During the fresh
+   reinstall, this removed the duplicated and corrupted graphics around the
+   window while the game kept downloading.
 
-If a blank panel appears after login, stop and restart GameNative normally.
-On my setup it then appeared as **What's New**, and I could close it. Keep your
-app data and container.
+If a blank panel appears after login, use the restart steps under
+[a frozen or corrupted launcher](#the-launcher-freezes-or-shows-corrupted-graphics).
+On the original setup, restarting made the panel appear as **What's New**, and
+I could close it. The fresh reinstall also hit corrupted graphics at the game
+download dialog. Restarting cleared that screen, but required another sign-in.
 
 ## 10. Download Classic World
 
 1. In Nexon Launcher, choose **MapleStory**.
 2. Choose **Classic World**.
-3. Click **Play Now** and let the launcher download the game. The successful run
-   downloaded about **2 GB**. Leave the game install folder at its default,
-   **`C:\Nexon\Library\maplestorycw`**.
-4. When the download finishes, click **Play**, then **Log In**.
-5. Choose your world and channel.
+3. Tap **Download**. Some launcher screens show **Play Now** first.
+   In the download dialog, leave **Game installation location** at its default,
+   **`C:\Nexon\Library\maplestorycw`**. It should show about **2 GB** required.
+   Tap the blue **Download** button at the bottom right.
+4. Wait for the button to change to **Play**. During the fresh reinstall, the
+   progress screen froze at **85%** even though installation had completed.
+   If progress and buttons stop responding, use the
+   [restart steps below](#the-launcher-freezes-or-shows-corrupted-graphics),
+   close **What's New**, and check the button again. Mine showed **Play** after
+   that restart, without downloading the game again.
+5. Tap **Play**, wait through the startup logos, then tap **Log In** in the game.
+6. Tap your world, then tap a channel. Check that the red circle marks the
+   channel you tapped. Tap **Go to the selected world** above the channel list.
 
 You should reach **Select a Character**. I checked Windia, channel 9, after the
 service opened at 2 PM Eastern on October 21, 2026. You can choose your own world
@@ -304,7 +328,12 @@ and channel. Character creation and gameplay still need checking.
 ## Next time you play
 
 Open **GameNative**, choose **NexonLauncher**, and tap **Play**. In Nexon Launcher,
-choose **MapleStory**, then **Classic World**, then **Play**.
+close **What's New** if it appears and maximize the window. Choose **MapleStory**,
+then **Classic World**, then **Play**. In the game, tap **Log In** and choose your
+world and channel as in step 10.
+
+I exited through GameNative's Quick Menu and repeated this route. Nexon kept
+the login, and the game reached character selection again with direct touch.
 
 Keep **Download/Launcher**. Those are the installed launcher files. Also keep
 **Download/NexonLauncher**, its original installer, `.gamenative` marker and
@@ -361,6 +390,28 @@ Stop and restart GameNative normally. Keep its data and the same container.
 For a missing executable, check **Download/Launcher/nexon_launcher.exe** and the
 `D:` drive mapping described in step 7.
 
+### Taps land above or beside the game buttons
+
+Exit through GameNative's Quick Menu, then open the same entry's **Edit
+container → General**. Scroll down and set **Screen Size** to **1366x768 (16:9)**.
+Tap the outer Save icon and launch again. Check that Touchscreen Mode is on
+and Shooter Mode is off too. This fixed the channel-selection offset in the
+fresh walkthrough.
+
+### The launcher freezes or shows corrupted graphics
+
+1. Press **Android Back** to open GameNative's **Quick Menu**.
+2. Tap the **red exit icon at the bottom left**. Wait for the library to return.
+3. Open the **same NexonLauncher entry** and tap **Play**.
+4. Sign in again if asked, close **What's New**, and maximize the launcher.
+   The first restart required another login; the next one kept the login and
+   showed the installed game's **Play** button. Keep your app data and the same
+   container.
+
+If the launcher responds but the edges look duplicated or corrupted, first
+close **What's New** and maximize the launcher as described in step 9. This
+cleared the drawing glitches without another restart during the download.
+
 ### Nexon shows maintenance
 
 Wait until the service opens and try again. Keep the working container settings.
@@ -376,15 +427,18 @@ The helper's download checks, repeat runs and USB command handling passed the
 Windows checks with a simulated device. A fresh download of the public ZIP
 then installed GameNative and copied the checked files onto the Thor. Runtime
 import, installer configuration, launcher installation and the switch to
-Proton 11 passed on the device. The repeat check from Nexon sign-in onward is
-still in progress. First-time USB authorization wasn't reset for this run.
+Proton 11 passed on the device. Nexon sign-in, the game download and launch,
+and Windia channel 9 character selection also passed. The launcher needed
+restarts for frozen windows, including a progress display stuck at 85% after
+installation had completed. Maximizing fixed duplicated window edges, and
+1366x768 fixed the game's touch offset. First-time USB authorization wasn't
+reset for this run. A later launch from the same entry kept the Nexon login and
+reached character selection again without a recovery restart.
 Character creation, gameplay, controller bindings, performance and longer
 sessions haven't been checked.
 
-The actual Proton runtime was checked during the working setup. The archived
-runtime has the matching component ID and version. I haven't compared its files
-byte for byte with the installed runtime. Future Nexon, game or server updates
-may change what works.
+The fresh run imported the checked Proton package listed in the manifest.
+Future Nexon, game or server updates may change what works.
 
 ## Files and sources
 

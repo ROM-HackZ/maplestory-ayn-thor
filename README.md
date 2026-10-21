@@ -16,6 +16,26 @@ the controller layout, and switching the graphics driver version to Turnip
 stopped the flashing and broken scenery seen with System. Nexon Launcher needed
 restarts when its window froze. Longer sessions haven't been checked.
 
+## Contents
+
+- [Before you start](#before-you-start)
+- [1. Download this setup on your computer](#1-download-this-setup-on-your-computer)
+- [2. Let your computer talk to the Thor](#2-let-your-computer-talk-to-the-thor)
+- [3. Run the helper](#3-run-the-helper)
+- [4. Open GameNative and add the runtime](#4-open-gamenative-and-add-the-runtime)
+- [5. Add the Nexon installer to the library](#5-add-the-nexon-installer-to-the-library)
+- [6. Enter the installer settings](#6-enter-the-installer-settings)
+- [7. Install Nexon Launcher](#7-install-nexon-launcher)
+- [8. Switch the same entry to the installed launcher](#8-switch-the-same-entry-to-the-installed-launcher)
+- [9. Apply the graphics fix](#9-apply-the-graphics-fix)
+- [10. Turn on touch and sign in](#10-turn-on-touch-and-sign-in)
+- [11. Download Classic World](#11-download-classic-world)
+- [Set up the controller](#set-up-the-controller)
+- [Next time you play](#next-time-you-play)
+- [If something gets stuck](#if-something-gets-stuck)
+- [What I've checked](#what-ive-checked)
+- [Files and sources](#files-and-sources)
+
 ## Before you start
 
 You'll need:
@@ -241,44 +261,29 @@ typing. Keep it floating for the launcher sign-in too.
 5. Reopen settings. Check that the path is still there.
 6. On **General**, change **Wine Version** to **Proton 11.0-2 ARM64EC**, component
    **`proton-11.0-2-arm64ec-1`**.
-7. Check the remaining settings against this table. On **Graphics**, keep
-   **Wrapper**, **GL** and **DXVK**, but change **Graphics Driver Version** from
-   **System** to **turnip25.3.0_R3_Auto**. **Screen Size** is farther down the
-   General tab. Open its list and scroll inside the list to find **1366x768**.
+7. Check the remaining settings against this table. **Screen Size** is farther
+   down the General tab. Open its list and scroll inside the list to find
+   **1366x768**. You'll set the game's graphics in step 9.
 
 | Setting | Choose or enter |
 |---|---|
 | Container variant | bionic |
 | Emulation tab: FEXCore Version / 64-bit Emulator | 2605 / FEXCore |
 | Emulation tab: 32-bit Emulator / Box64 Version | Box64 / 0.4.2 |
-| Graphics driver | Wrapper |
-| Wrapper's graphics driver version | turnip25.3.0_R3_Auto |
-| Display renderer | GL |
-| DirectX wrapper | DXVK |
 | General tab: Screen Size | 1366x768 (16:9) |
-| DXVK subversion | Leave the default |
 | Extra launch arguments | Leave the field empty |
 | Environment tab | Leave its defaults |
 
 8. Tap the **outer disk Save icon** again.
 9. Reopen settings and check the **Proton 11.0-2 ARM64EC** selection,
    **`D:/Launcher/nexon_launcher.exe`** and **Screen Size 1366x768**. Then close
-   settings and tap **Play**.
+   settings and continue to step 9 before tapping Play.
 
 Use that exact screen size for the game. At the fresh default of 1280x720, a
 tap on channel 9 selected channel 1. Setting 1366x768 made direct taps line up.
 
-Use the exact Turnip version in the table too. With **System**, clouds and other
-pieces of the map flashed, disappeared or drew in the wrong place. A recording
-caught whole sections duplicated for a frame. **turnip25.3.0_R3_Auto** cleared
-that corruption in the same area during the follow-up check. Keep **Display
-Renderer GL**. Changing it to Vulkan or SurfaceFlinger didn't give a usable
-launcher in this check.
-
-You should see Nexon Launcher now. Keep this container. Creating a second one
-would leave the launcher's installed Windows files and registration behind.
-The first launch after changing runtimes prepares the Proton 11 base. Wait for
-that to finish, then let Nexon Launcher download its own updates.
+Keep this container. Creating a second one would leave the launcher's installed
+Windows files and registration behind.
 
 <details>
 <summary>Check the saved launcher path and runtime</summary>
@@ -287,11 +292,42 @@ that to finish, then let Nexon Launcher download its own updates.
 
 ![General tab with Screen Size set to 1366x768](docs/images/screen-size.png)
 
+</details>
+
+## 9. Apply the graphics fix
+
+Do this before launching the game. The **System** driver used for the installer
+made clouds and pieces of the map flash, disappear or draw in the wrong place.
+Switching to this Turnip version cleared that corruption in the same area.
+
+1. On the **same NexonLauncher entry**, open its options, then **Edit container**.
+2. Open the **Graphics** tab and set these values:
+
+| Setting | Choose |
+|---|---|
+| Graphics Driver | Wrapper |
+| Graphics Driver Version | turnip25.3.0_R3_Auto |
+| Display Renderer | GL |
+| DX Wrapper | DXVK |
+| DXVK subversion | Leave the default |
+
+3. Tap the **outer disk Save icon** on the main settings window.
+4. Reopen **Edit container → Graphics**. Check that the exact Turnip version,
+   **GL** and **DXVK** are still selected, then close settings.
+5. Tap **Play**. The first launch after changing runtimes prepares the Proton 11
+   base. Wait for that to finish, then let Nexon Launcher download its own updates.
+
+Keep **Display Renderer** on **GL**. Vulkan and SurfaceFlinger didn't give a
+usable launcher in this check.
+
+<details>
+<summary>Check the graphics choices against this picture</summary>
+
 ![Runtime graphics choices with Wrapper, turnip25.3.0_R3_Auto, GL and DXVK](docs/images/launcher-graphics.png)
 
 </details>
 
-## 9. Turn on touch and sign in
+## 10. Turn on touch and sign in
 
 1. While Nexon Launcher is running, press **Android Back** to open GameNative's
    **Quick Menu**.
@@ -316,7 +352,7 @@ On the original setup, restarting made the panel appear as **What's New**, and
 I could close it. The fresh reinstall also hit corrupted graphics at the game
 download dialog. Restarting cleared that screen, but required another sign-in.
 
-## 10. Download Classic World
+## 11. Download Classic World
 
 1. In Nexon Launcher, choose **MapleStory**.
 2. Choose **Classic World**.
@@ -350,7 +386,7 @@ The game's built-in controller layout didn't respond in the tested setup.
 Open **GameNative**, choose **NexonLauncher**, and tap **Play**. In Nexon Launcher,
 close **What's New** if it appears and maximize the window. Choose **MapleStory**,
 then **Classic World**, then **Play**. In the game, tap **Log In** and choose your
-world and channel as in step 10.
+world and channel as in step 11.
 
 I exited through GameNative's Quick Menu and repeated this route. Nexon kept
 the login, and the game reached character selection again with direct touch.
@@ -401,7 +437,7 @@ window**. Reopen the settings and check the value before launching.
 
 ### Touch doesn't work, or the screen looks paused
 
-Repeat step 9, items 1 to 4. Touchscreen Mode should be on and Shooter Mode off.
+Repeat step 10, items 1 to 4. Touchscreen Mode should be on and Shooter Mode off.
 Close the menu and tap the center Play control if paused.
 
 ### Nexon Launcher hangs after switching runtime
@@ -429,15 +465,13 @@ fresh walkthrough.
    container.
 
 If the launcher responds but the edges look duplicated or corrupted, first
-close **What's New** and maximize the launcher as described in step 9. This
+close **What's New** and maximize the launcher as described in step 10. This
 cleared the drawing glitches without another restart during the download.
 
 ### Clouds or pieces of the map flash or draw in the wrong place
 
-Exit through GameNative's Quick Menu. Open the same NexonLauncher entry's
-**Edit container → Graphics**. Set **Graphics Driver** to **Wrapper** and
-**Graphics Driver Version** to **turnip25.3.0_R3_Auto**. Keep **Display Renderer
-GL** and **DX Wrapper DXVK**, then tap the outer Save icon and launch again.
+Exit through GameNative's Quick Menu, then repeat
+[step 9, Apply the graphics fix](#9-apply-the-graphics-fix).
 This cleared the broken scenery captured with the System driver in the tutorial
 area. The follow-up recording stayed clear while moving and talking to an NPC.
 
@@ -451,7 +485,7 @@ The original setup installed Classic World, signed in through Nexon's normal
 security checks and reached character selection with touch input on an AYN Thor.
 The separate modern MapleStory Steam attempt failed. Steam login, Headless Steam,
 GE runtimes and newer FEX experiments aren't needed for this route. The later
-gameplay check uses Turnip under Wrapper, as recorded in step 8.
+gameplay check uses Turnip under Wrapper, as recorded in step 9.
 
 The helper's download checks, repeat runs and USB command handling passed the
 Windows checks with a simulated device. A fresh download of the public ZIP

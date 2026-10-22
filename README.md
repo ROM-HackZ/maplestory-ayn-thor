@@ -37,6 +37,15 @@ need to write commands.
 
 ## Before you start
 
+Want Claude or Codex to handle the setup? Plug the Thor into your computer with
+a USB data cable, turn on **USB debugging** and tap **Allow** when the Thor asks.
+[Step 2](#2-let-your-computer-talk-to-the-thor) shows how. Use Claude or Codex
+with access to your computer and the connected Thor, then give it this prompt:
+
+> Set up MapleStory Classic World on my connected AYN Thor by following
+> https://github.com/ROM-HackZ/maplestory-ayn-thor. Keep my existing games and
+> settings. Ask me when you need my Nexon login or verification.
+
 You'll need:
 
 - An AYN Thor with Wi-Fi and several GB of free space. The game download is

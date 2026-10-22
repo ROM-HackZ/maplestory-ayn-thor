@@ -12,6 +12,8 @@ copies the installer, runtime and controller layout onto the Thor. Then you
 follow the steps below to enter the settings and sign into Nexon. You don't
 need to write commands.
 
+<img width="4284" height="5712" alt="0f162de2-b3aa-4c93-b69f-a6111d79bbfe" src="https://github.com/user-attachments/assets/7664901e-e01d-45eb-8ebf-65ae9363ce6f" />
+
 ## Contents
 
 - [Before you start](#before-you-start)

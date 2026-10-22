@@ -4,6 +4,9 @@ Here's how I play MapleStory Classic World on my Thor through the official
 Nexon Launcher in GameNative. Run the helper on your computer, then follow the
 steps on the Thor.
 
+Work through the numbered sections in order. Tap or click a picture to open
+it full size.
+
 The Windows helper downloads the files, checks them, installs GameNative and
 copies the installer, runtime and controller layout onto the Thor. Then you
 follow the steps below to enter the settings and sign into Nexon. You don't
@@ -26,6 +29,7 @@ need to write commands.
 - [12. Set up the controller](#12-set-up-the-controller)
 - [Change controller buttons](docs/controller-setup.md#change-controller-buttons)
 - [Next time you play](#next-time-you-play)
+- [When you're finished](#when-youre-finished)
 - [If something gets stuck](#if-something-gets-stuck)
 - [Files and sources](#files-and-sources)
 
@@ -80,7 +84,7 @@ Watch the Thor for an **Allow USB debugging?** message. It may appear when the
 helper starts. Tap **Allow**. This permission lets the helper install the app
 and copy the files.
 
-<details>
+<details open>
 <summary>Find the Android settings and USB debugging switch</summary>
 
 ![Android Settings with System and About handheld console near the bottom](docs/images/android-settings.png)
@@ -143,8 +147,10 @@ uses one for installing Nexon Launcher and another for running it afterward.
 You should now have both runtimes available. The final Proton component ID is
 `proton-11.0-2-arm64ec-1`. Avoid similarly named packages ending in `-6`.
 
-<details>
+<details open>
 <summary>Find the runtime import button and check the finished import</summary>
+
+![GameNative sign-in screen with Skip login at the bottom](docs/images/skip-steam-login.png)
 
 ![Wine/Proton Manager scrolled down to Import .wcp Package](docs/images/runtime-import.png)
 
@@ -172,7 +178,7 @@ You should now have both runtimes available. The final Proton component ID is
 In these settings, GameNative may call the Windows environment a **container**.
 Keep using this same entry and container throughout the guide.
 
-<details>
+<details open>
 <summary>Choose the installer folder and open its settings</summary>
 
 ![NexonLauncher folder with NexonLauncherSetup.exe and Use this folder at the bottom](docs/images/installer-folder.png)
@@ -205,7 +211,7 @@ tabs or farther down the settings page.
 The small **OK** button inside a popup only closes that popup. You still need
 that outer Save icon to save the container. Close settings after checking.
 
-<details>
+<details open>
 <summary>Check the installer settings against these pictures</summary>
 
 ![General tab with bionic, Proton 9 x86_64 and NexonLauncherSetup.exe selected](docs/images/installer-general.png)
@@ -250,12 +256,18 @@ The keyboard steps above use Gboard. If your keyboard looks
 different, use its floating or resize control so you can see the field while
 typing. Keep it floating for the launcher sign-in too.
 
-<details>
-<summary>Check the touch modes and floating keyboard</summary>
+<details open>
+<summary>Set the touch modes, enter the install folder and finish setup</summary>
 
 ![Quick Menu with Touchscreen Mode on and Shooter Mode off](docs/images/touchscreen-modes.png)
 
+![Gboard menu showing Floating at the bottom left](docs/images/keyboard-floating-menu.png)
+
 ![Floating keyboard moved right so D:\Launcher stays visible while typing](docs/images/floating-keyboard.png)
+
+![Nexon setup finished with both Run Nexon Launcher options unchecked](docs/images/installer-finish.png)
+
+![Android file manager showing nexon_launcher.exe inside Download/Launcher](docs/images/installed-launcher-file.png)
 
 </details>
 
@@ -300,7 +312,7 @@ Use **1366x768** so your taps line up with the game's buttons.
 Keep this container. Creating a second one would leave the launcher's installed
 Windows files and registration behind.
 
-<details>
+<details open>
 <summary>Enter the launcher path, then check the saved settings</summary>
 
 ![Custom path dialog above the docked keyboard with D:/Launcher/nexon_launcher.exe visible](docs/images/launcher-path-keyboard.png)
@@ -335,7 +347,7 @@ to **Turnip** to fix flashing clouds and broken scenery.
 
 Keep **Display Renderer** on **GL** when using these settings.
 
-<details>
+<details open>
 <summary>Check the graphics choices against this picture</summary>
 
 ![Runtime graphics choices with Wrapper, turnip25.3.0_R3_Auto, GL and DXVK](docs/images/launcher-graphics.png)
@@ -367,7 +379,7 @@ same **NexonLauncher** entry and tap **Play** again.
 If a blank panel appears after login, use the restart steps under
 [a frozen or corrupted launcher](#the-launcher-freezes-or-shows-corrupted-graphics).
 
-<details>
+<details open>
 <summary>Keep the sign-in field visible beside the keyboard</summary>
 
 ![Nexon sign-in field and Continue button visible beside the floating keyboard](docs/images/launcher-login-keyboard.png)
@@ -407,7 +419,7 @@ GameNative sends keyboard presses for the Thor's buttons. That's why MapleStory'
 **Controller** tab doesn't match this layout. Make button changes in GameNative's
 **Edit Physical Controller** screen.
 
-<details>
+<details open>
 <summary>Check the selected channel</summary>
 
 ![World list with CH9 circled in red and Go to the selected world above it](docs/images/world-channel.png)
@@ -427,6 +439,13 @@ Keep **Download/Launcher**. Those are the installed launcher files. Also keep
 **Download/NexonLauncher**, its original installer, `.gamenative` marker and
 icon. GameNative's library discovery may depend on that source folder. Keep
 the same container too, since it holds the installation and login state.
+
+## When you're finished
+
+1. Press **Android Back** to open GameNative's **Quick Menu**.
+2. Tap the **red exit icon at the bottom left** to close the game and launcher.
+3. Wait until you're back in GameNative's library, then return to Android's
+   home screen. Press the Thor's power button to put it to sleep.
 
 ## If something gets stuck
 

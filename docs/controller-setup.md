@@ -41,7 +41,7 @@ to its login screen after editing, tap **OK** on the connection message, then
 **Log In** and choose your world, channel and character again. The saved
 controller layout stays applied.
 
-<details>
+<details open>
 <summary>Check the imported layout and Apply options</summary>
 
 ![Imported Thor layout showing 24 physical bindings, 8 radial slots and Add to library](images/controller-import.png)
@@ -123,7 +123,7 @@ These edits apply to the current NexonLauncher entry. They don't change the
 downloaded `MapleStory-Thor.icp` file. Applying that original profile again
 replaces your changes with the supplied layout.
 
-<details>
+<details open>
 <summary>Find the button rows, Clear Binding and Save</summary>
 
 ![Face Buttons in the physical controller editor with A, B, X and Y assignments and the disk Save icon](images/controller-buttons.png)

@@ -405,13 +405,16 @@ If a blank panel appears after login, use the restart steps under
 ## 12. Set up the controller
 
 1. Follow [Import the layout](docs/controller-setup.md#import-the-layout) to load
-   the Thor controls in GameNative.
+   my exported Thor controls in GameNative. The profile is included in the
+   setup ZIP as **controls/MapleStory-Thor.icp**.
 2. Back in the game, tap **Log In**. Tap your world, then tap a channel. Check
    that the red circle marks the channel you tapped. Tap **Go to the selected
    world** above the channel list.
 3. On **Select a Character**, create a character if you need one, or tap your
    existing character and then **Select a character** to enter the game.
-4. Try the left stick or D-pad to move, **A** to jump and **X** to attack.
+4. Try the left stick to move, **A** to jump and **X** to attack. The D-pad sends
+   **Q/W/E/R** for quick slots. Hold **RT** for the wheel with **F1–F8**, **Stats**
+   and **Skills**. See the [full button list](docs/controller-setup.md#buttons).
 5. To move an action to another button, follow
    [Change controller buttons](docs/controller-setup.md#change-controller-buttons).
 

@@ -1,61 +1,498 @@
 {
   "schemaVersion": 1,
+  "id": 0,
   "name": "MapleStory Classic World - Thor",
-  "includedSections": ["physicalController", "radialMenu"],
-  "leftStickDeadzone": 0.15,
-  "rightStickDeadzone": 0.15,
-  "leftStickSensitivity": 1.0,
-  "rightStickSensitivity": 0.8,
+  "includedSections": [
+    "onScreen",
+    "physicalController",
+    "radialMenu",
+    "gyro",
+    "touchscreen",
+    "shooter"
+  ],
+  "cursorSpeed": 1,
+  "elements": [
+    {
+      "type": "D_PAD",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_DPAD_UP",
+        "GAMEPAD_DPAD_RIGHT",
+        "GAMEPAD_DPAD_DOWN",
+        "GAMEPAD_DPAD_LEFT"
+      ],
+      "scale": 0.85,
+      "x": 0.10734757781028748,
+      "y": 0.39849624037742615,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_X",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.8124023079872131,
+      "y": 0.39849624037742615,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_Y",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.8712871074676514,
+      "y": 0.2650375962257385,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_A",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.8712871074676514,
+      "y": 0.5319548845291138,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_B",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.9306930899620056,
+      "y": 0.39849624037742615,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_R2",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 2,
+      "x": 0.9291297793388367,
+      "y": 0.06954887509346008,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_R1",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.9692547917366028,
+      "y": 0.22180451452732086,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_L1",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 1,
+      "x": 0.029702970758080482,
+      "y": 0.22180451452732086,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_L2",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 2,
+      "x": 0.06930693238973618,
+      "y": 0.06954887509346008,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "ROUND_RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_START",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 0.85,
+      "x": 0.5377801060676575,
+      "y": 0.9097744226455688,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 15
+    },
+    {
+      "type": "BUTTON",
+      "shape": "ROUND_RECT",
+      "bindings": [
+        "GAMEPAD_BUTTON_SELECT",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 0.85,
+      "x": 0.46013548970222473,
+      "y": 0.9097744226455688,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 16
+    },
+    {
+      "type": "STICK",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_LEFT_THUMB_UP",
+        "GAMEPAD_LEFT_THUMB_RIGHT",
+        "GAMEPAD_LEFT_THUMB_DOWN",
+        "GAMEPAD_LEFT_THUMB_LEFT"
+      ],
+      "scale": 1,
+      "x": 0.215216264128685,
+      "y": 0.7330827116966248,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "STICK",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_RIGHT_THUMB_UP",
+        "GAMEPAD_RIGHT_THUMB_RIGHT",
+        "GAMEPAD_RIGHT_THUMB_DOWN",
+        "GAMEPAD_RIGHT_THUMB_LEFT"
+      ],
+      "scale": 1,
+      "x": 0.7842626571655273,
+      "y": 0.7330827116966248,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_L3",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 0.85,
+      "x": 0.049504950642585754,
+      "y": 0.7330827116966248,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    },
+    {
+      "type": "BUTTON",
+      "shape": "CIRCLE",
+      "bindings": [
+        "GAMEPAD_BUTTON_R3",
+        "NONE",
+        "NONE",
+        "NONE"
+      ],
+      "scale": 0.85,
+      "x": 0.949452817440033,
+      "y": 0.7330827116966248,
+      "toggleSwitch": false,
+      "text": "",
+      "iconId": 0
+    }
+  ],
+  "controllers": [
+    {
+      "id": "*",
+      "name": "Thor \/ any gamepad",
+      "controllerBindings": [
+        {
+          "keyCode": 96,
+          "binding": "KEY_ALT_L"
+        },
+        {
+          "keyCode": 97,
+          "binding": "KEY_SPACE"
+        },
+        {
+          "keyCode": 99,
+          "binding": "KEY_CTRL_L"
+        },
+        {
+          "keyCode": 100,
+          "binding": "KEY_Z"
+        },
+        {
+          "keyCode": 102,
+          "binding": "KEY_A"
+        },
+        {
+          "keyCode": 105,
+          "binding": "OPEN_RADIAL_MENU"
+        },
+        {
+          "keyCode": 106,
+          "binding": "KEY_B"
+        },
+        {
+          "keyCode": 107,
+          "binding": "MOUSE_LEFT_BUTTON"
+        },
+        {
+          "keyCode": 108,
+          "binding": "KEY_ESC"
+        },
+        {
+          "keyCode": 109,
+          "binding": "SHOW_KEYBOARD"
+        },
+        {
+          "keyCode": 19,
+          "binding": "KEY_Q"
+        },
+        {
+          "keyCode": 20,
+          "binding": "KEY_W"
+        },
+        {
+          "keyCode": 21,
+          "binding": "KEY_E"
+        },
+        {
+          "keyCode": 22,
+          "binding": "KEY_R"
+        },
+        {
+          "keyCode": -8,
+          "binding": "MOUSE_MOVE_UP"
+        },
+        {
+          "keyCode": -7,
+          "binding": "MOUSE_MOVE_DOWN"
+        },
+        {
+          "keyCode": -6,
+          "binding": "MOUSE_MOVE_RIGHT"
+        },
+        {
+          "keyCode": -5,
+          "binding": "MOUSE_MOVE_LEFT"
+        },
+        {
+          "keyCode": -4,
+          "binding": "KEY_UP"
+        },
+        {
+          "keyCode": -3,
+          "binding": "KEY_DOWN"
+        },
+        {
+          "keyCode": -2,
+          "binding": "KEY_RIGHT"
+        },
+        {
+          "keyCode": -1,
+          "binding": "KEY_LEFT"
+        }
+      ]
+    }
+  ],
+  "leftStickDeadzone": 0.15000000596046448,
+  "rightStickDeadzone": 0.15000000596046448,
+  "leftStickSensitivity": 1,
+  "rightStickSensitivity": 0.800000011920929,
   "leftStickDeadzoneMode": "circular",
   "rightStickDeadzoneMode": "circular",
   "leftStickDigitalMode": "eight_way",
   "rightStickDigitalMode": "unrestricted",
-  "controllers": [
-    {
-      "id": "*",
-      "name": "Thor / any gamepad",
-      "controllerBindings": [
-        {"keyCode": -1, "binding": "KEY_LEFT"},
-        {"keyCode": -2, "binding": "KEY_RIGHT"},
-        {"keyCode": -3, "binding": "KEY_DOWN"},
-        {"keyCode": -4, "binding": "KEY_UP"},
-        {"keyCode": -5, "binding": "MOUSE_MOVE_LEFT"},
-        {"keyCode": -6, "binding": "MOUSE_MOVE_RIGHT"},
-        {"keyCode": -7, "binding": "MOUSE_MOVE_DOWN"},
-        {"keyCode": -8, "binding": "MOUSE_MOVE_UP"},
-        {"keyCode": 96, "binding": "KEY_ALT_L"},
-        {"keyCode": 97, "binding": "KEY_SPACE"},
-        {"keyCode": 99, "binding": "KEY_CTRL_L"},
-        {"keyCode": 100, "binding": "KEY_Z"},
-        {"keyCode": 102, "binding": "KEY_Q"},
-        {"keyCode": 103, "binding": "KEY_W"},
-        {"keyCode": 104, "binding": "KEY_E"},
-        {"keyCode": 105, "binding": "OPEN_RADIAL_MENU"},
-        {"keyCode": 108, "binding": "KEY_ESC"},
-        {"keyCode": 109, "binding": "KEY_I"},
-        {"keyCode": 106, "binding": "KEY_N"},
-        {"keyCode": 107, "binding": "MOUSE_LEFT_BUTTON"},
-        {"keyCode": 19, "binding": "KEY_UP"},
-        {"keyCode": 22, "binding": "KEY_RIGHT"},
-        {"keyCode": 20, "binding": "KEY_DOWN"},
-        {"keyCode": 21, "binding": "KEY_LEFT"}
-      ]
-    }
-  ],
   "radialMenus": [
     {
       "id": "default",
       "name": "MapleStory menus",
       "slots": [
-        {"label": "Inventory", "binding": "KEY_I"},
-        {"label": "Equipment", "binding": "KEY_U"},
-        {"label": "Skills", "binding": "KEY_K"},
-        {"label": "Stats", "binding": "KEY_Y"},
-        {"label": "Quests", "binding": "KEY_J"},
-        {"label": "Map", "binding": "KEY_N"},
-        {"label": "Confirm", "binding": "KEY_ENTER"},
-        {"label": "Keyboard", "binding": "SHOW_KEYBOARD"}
+        {
+          "label": "F1",
+          "binding": "KEY_F1"
+        },
+        {
+          "label": "F2",
+          "binding": "KEY_F2"
+        },
+        {
+          "label": "F3",
+          "binding": "KEY_F3"
+        },
+        {
+          "label": "F4",
+          "binding": "KEY_F4"
+        },
+        {
+          "label": "F5",
+          "binding": "KEY_F5"
+        },
+        {
+          "label": "F6",
+          "binding": "KEY_F6"
+        },
+        {
+          "label": "F7",
+          "binding": "KEY_F7"
+        },
+        {
+          "label": "F8",
+          "binding": "KEY_F8"
+        },
+        {
+          "label": "Stats",
+          "binding": "KEY_Y"
+        },
+        {
+          "label": "Skills",
+          "binding": "KEY_K"
+        }
       ]
     }
-  ]
+  ],
+  "gyroSettings": {
+    "mode": 0,
+    "lastTarget": 2,
+    "activationMode": 0,
+    "conversionStyle": 0,
+    "sensitivity": 1,
+    "verticalScale": 1,
+    "steadyingDegreesPerSecond": 1,
+    "smoothingMilliseconds": 0,
+    "stickAntiDeadzone": 0,
+    "tiltSteeringEnabled": false,
+    "tiltFullScaleDegrees": 30,
+    "tiltDeadzoneDegrees": 2,
+    "invertX": false,
+    "invertY": false
+  },
+  "touchscreenSettings": {
+    "enabled": true,
+    "gestures": {
+      "tapEnabled": true,
+      "tapAction": "left_click",
+      "dragEnabled": true,
+      "dragAction": "left_click_drag",
+      "holdMouseButtonWhileTouchingEnabled": false,
+      "holdMouseButtonWhileTouchingAction": "left_click",
+      "longPressEnabled": false,
+      "longPressAction": "right_click",
+      "longPressMouseBehavior": "hold",
+      "longPressDelay": 300,
+      "doubleTapEnabled": true,
+      "doubleTapDelay": 300,
+      "twoFingerDragEnabled": true,
+      "twoFingerDragAction": "arrow_keys",
+      "pinchEnabled": true,
+      "pinchAction": "scroll_wheel",
+      "twoFingerTapEnabled": true,
+      "twoFingerTapAction": "right_click",
+      "twoFingerHoldEnabled": false,
+      "twoFingerHoldAction": "middle_click",
+      "twoFingerHoldMouseBehavior": "hold",
+      "twoFingerHoldDelay": 300,
+      "threeFingerTapEnabled": false,
+      "threeFingerTapAction": "show_keyboard",
+      "threeFingerDragEnabled": false,
+      "threeFingerDragAction": "arrow_keys",
+      "threeFingerHoldEnabled": false,
+      "threeFingerHoldAction": "key_ESC",
+      "threeFingerHoldMouseBehavior": "hold",
+      "threeFingerHoldDelay": 300,
+      "showClickHighlight": false,
+      "showGestureDebugOverlay": false,
+      "showCursorInTouchscreenMode": false,
+      "gestureThreshold": 40,
+      "mouseDragMovementMode": "direct"
+    }
+  },
+  "shooterSettings": {
+    "enabled": false,
+    "config": {
+      "movementType": "gamepad_left_stick",
+      "lookType": "gamepad_right_stick",
+      "lookSensitivityX": 1,
+      "lookSensitivityY": 1,
+      "invertLookY": false,
+      "lookSmoothing": 0,
+      "lookDeadzone": 0,
+      "mouseAccelerationEnabled": false,
+      "mouseAccelerationStrength": 1,
+      "mouseAccelerationMaxMultiplier": 3,
+      "win32RelativeMouseInput": false,
+      "movementJoystickSize": 1,
+      "lookJoystickSize": 1,
+      "movementJoystickDeadzone": 0.009999999776482582,
+      "lookJoystickDeadzone": 0.009999999776482582,
+      "movementStickSensitivity": 1,
+      "lookStickSensitivity": 1,
+      "movementJoystickBehavior": "anchored",
+      "lookJoystickBehavior": "anchored",
+      "showRuntimeToggle": true,
+      "joystickSize": 1,
+      "joystickBehavior": "anchored",
+      "movementZoneSplit": 0.5,
+      "buttonLookThroughEnabled": true,
+      "buttonLookThroughDragThreshold": 12,
+      "outerRingSprintEnabled": false,
+      "outerRingSprintThreshold": 0.8500000238418579,
+      "outerRingSprintPressMode": false,
+      "sprintBinding": "KEY_SHIFT_L"
+    }
+  }
 }

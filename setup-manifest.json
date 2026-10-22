@@ -10,8 +10,11 @@
     "file": "controls/MapleStory-Thor.icp",
     "device_path": "/sdcard/Download/ThorSetup/MapleStory-Thor.icp",
     "name": "MapleStory Classic World - Thor",
-    "verified": "Physical A jump and X attack, then left stick/D-pad movement, B NPC talk, Select inventory and RT radial menu confirmed by user on the Thor",
-    "scope": "Apply physicalController and radialMenu sections to the existing NexonLauncher entry"
+    "exported_on": "2026-10-22",
+    "source": "User-exported GameNative profile from the Thor",
+    "physical_binding_count": 22,
+    "radial_slot_count": 10,
+    "scope": "Apply onScreen, physicalController, radialMenu, gyro, touchscreen and shooter sections to the existing NexonLauncher entry"
   },
   "fresh_reinstall_notes": "Existing USB authorization retained. Nexon Launcher needed Quick Menu exit and same-entry restarts for frozen windows, including 85% progress after installation completed. Maximize cleared duplicated edges.",
   "artifacts": [

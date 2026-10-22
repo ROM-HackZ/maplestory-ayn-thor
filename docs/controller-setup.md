@@ -1,8 +1,8 @@
 # Controller setup
 
-Import the Thor layout in GameNative, then change any buttons you want.
-It maps the controller to MapleStory's keyboard controls using GameNative's
-own control profile.
+This is my exported Classic World profile from the Thor. It's bundled as
+**MapleStory-Thor.icp** in the setup ZIP. Import it in GameNative, then change
+any buttons you want.
 
 ## Why the game's Controller menu doesn't match
 
@@ -28,27 +28,25 @@ key in GameNative too.
 4. Scroll down inside that panel and tap **Control Profiles**.
 5. Tap the **down-arrow import icon** at the top right, beside **+**.
 6. In the file picker, open **Download → ThorSetup → MapleStory-Thor.icp**.
-   The preview should show **MapleStory Classic World - Thor**, **24** physical
-   bindings and **8** radial-menu slots. Tap **Add to library**.
+   The preview should show **MapleStory Classic World - Thor**, **22** physical
+   bindings and **10** radial-menu slots. Tap **Add to library**.
 7. Find **MapleStory Classic World - Thor** in the profile list. Tap its **Apply**
-   button. Leave **Physical controller** and **Radial Menu** checked, then tap
-   **Apply** in the popup. These settings apply to the current game entry.
+   button. Leave all six included sections checked to use the full export,
+   then tap **Apply** in the popup. It includes the on-screen controls, physical
+   controller, radial menu, gyro, touchscreen and shooter settings.
 8. Close Control Profiles and Quick Menu. Tap the center **Play** control if
    the game is paused.
+
+The export sets **Touchscreen Mode ON**, **Shooter Mode OFF** and gyro off.
+Applying it replaces those settings and the controls for the current game entry.
+If you imported the older profile, copy the current file over the old one and
+import it again. If two profiles share the same name, use the one with **22**
+physical bindings and **10** radial slots.
 
 GameNative pauses the game while these menus are open. If MapleStory returns
 to its login screen after editing, tap **OK** on the connection message, then
 **Log In** and choose your world, channel and character again. The saved
 controller layout stays applied.
-
-<details open>
-<summary>Check the imported layout and Apply options</summary>
-
-![Imported Thor layout showing 24 physical bindings, 8 radial slots and Add to library](images/controller-import.png)
-
-![Apply popup with Physical controller and Radial Menu checked](images/controller-apply.png)
-
-</details>
 
 ## Copy the profile file
 
@@ -62,7 +60,8 @@ controller layout stays applied.
 5. Start at item 2 under **Import the layout** above. You don't need to run the
    launcher installer again.
 
-The same [profile file is in this repo](../controls/MapleStory-Thor.icp).
+You can also [download just the profile](https://raw.githubusercontent.com/ROM-HackZ/maplestory-ayn-thor/main/controls/MapleStory-Thor.icp).
+Save it as **MapleStory-Thor.icp**, keeping the `.icp` extension.
 For manual setup on another computer, copy it to **Download/ThorSetup** and
 use the same import steps.
 
@@ -72,26 +71,28 @@ Use the letters printed on the Thor's buttons.
 
 | Thor control | Action | Keyboard or mouse input |
 |---|---|---|
-| Left stick or D-pad | Move, climb and enter portals | Arrow keys |
+| Left stick | Move, climb and enter portals | Arrow keys |
 | A | Jump | Left Alt |
 | X | Attack | Left Ctrl |
 | Y | Pick up items | Z |
 | B | Talk to an NPC | Space |
-| Select | Inventory | I |
+| Select | Open the keyboard | GameNative keyboard |
 | Start | Game menu or close a window | Escape |
-| Click left stick | Mini map | N |
+| Click left stick | Send B | B |
 | Right stick | Move the mouse pointer | Mouse movement |
 | Click right stick | Click at the pointer | Left mouse button |
-| LB / RB / LT | Quick slots Q / W / E | Q / W / E |
+| D-pad up / down / left / right | Quick slots Q / W / E / R | Q / W / E / R |
+| LB | Quick slot A | A |
+| RB / LT | No binding in this export | Not assigned |
 | Hold RT | Open the menu wheel | GameNative radial menu |
 
 Hold **RT**, point the stick toward a wheel entry, then release **RT** to choose
-it. The wheel has Inventory, Equipment, Skills, Stats, Quests, Map, Confirm and
-Keyboard. The right stick moves the pointer without clicking anything by itself.
+it. The wheel has **F1–F8**, **Stats** and **Skills**. Stats sends **Y** and Skills
+sends **K**. The right stick moves the pointer without clicking anything by itself.
 
-Quick slots start empty. Drag your chosen skills or items into **Q**, **W** and
-**E** in the game's quick-slot panel before using the shoulder buttons for them.
-The table shows the supplied layout with the game's normal keyboard bindings.
+Quick slots start empty. Assign your chosen skills or items to **Q**, **W**,
+**E**, **R** and **A** in the game's keyboard settings before using the D-pad
+and LB for them. The F keys do whatever you've assigned them in the game.
 
 ## Change controller buttons
 
